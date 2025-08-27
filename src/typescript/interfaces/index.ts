@@ -1,5 +1,5 @@
 export interface ParkType {
-  park_id: string;
+  park_Id: string;
   english_name: string;
   arabic_name: string;
   image: string;
