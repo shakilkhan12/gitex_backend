@@ -1,0 +1,9 @@
+# Dependency directories
+/node_modules
+/.env
+/info.txt
+dist
+.vercel
+*.local
+.DS_Store
+/generated/prisma

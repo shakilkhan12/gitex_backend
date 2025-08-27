@@ -1,0 +1,1 @@
+export { default as ParkService } from "@/services/park.service";

@@ -1,0 +1,1 @@
+export { default as ParkController } from "@/controllers/park.controller";
