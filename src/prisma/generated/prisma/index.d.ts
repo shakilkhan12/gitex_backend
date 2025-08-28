@@ -9571,6 +9571,19 @@ export namespace Prisma {
     status: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    attendance: boolean | null
+    footfall: boolean | null
+    sentiment: boolean | null
+    behaviour: boolean | null
+    irrigation: boolean | null
+    landscaping: boolean | null
+    litter_detection: boolean | null
+    smoking_detection: boolean | null
+    intrusion: boolean | null
+    stream_url: string | null
+    stream_api_key: string | null
+    stream_path: string | null
+    password: string | null
   }
 
   export type Park_camerasMaxAggregateOutputType = {
@@ -9587,6 +9600,19 @@ export namespace Prisma {
     status: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    attendance: boolean | null
+    footfall: boolean | null
+    sentiment: boolean | null
+    behaviour: boolean | null
+    irrigation: boolean | null
+    landscaping: boolean | null
+    litter_detection: boolean | null
+    smoking_detection: boolean | null
+    intrusion: boolean | null
+    stream_url: string | null
+    stream_api_key: string | null
+    stream_path: string | null
+    password: string | null
   }
 
   export type Park_camerasCountAggregateOutputType = {
@@ -9603,6 +9629,19 @@ export namespace Prisma {
     status: number
     createdAt: number
     updatedAt: number
+    attendance: number
+    footfall: number
+    sentiment: number
+    behaviour: number
+    irrigation: number
+    landscaping: number
+    litter_detection: number
+    smoking_detection: number
+    intrusion: number
+    stream_url: number
+    stream_api_key: number
+    stream_path: number
+    password: number
     _all: number
   }
 
@@ -9635,6 +9674,19 @@ export namespace Prisma {
     status?: true
     createdAt?: true
     updatedAt?: true
+    attendance?: true
+    footfall?: true
+    sentiment?: true
+    behaviour?: true
+    irrigation?: true
+    landscaping?: true
+    litter_detection?: true
+    smoking_detection?: true
+    intrusion?: true
+    stream_url?: true
+    stream_api_key?: true
+    stream_path?: true
+    password?: true
   }
 
   export type Park_camerasMaxAggregateInputType = {
@@ -9651,6 +9703,19 @@ export namespace Prisma {
     status?: true
     createdAt?: true
     updatedAt?: true
+    attendance?: true
+    footfall?: true
+    sentiment?: true
+    behaviour?: true
+    irrigation?: true
+    landscaping?: true
+    litter_detection?: true
+    smoking_detection?: true
+    intrusion?: true
+    stream_url?: true
+    stream_api_key?: true
+    stream_path?: true
+    password?: true
   }
 
   export type Park_camerasCountAggregateInputType = {
@@ -9667,6 +9732,19 @@ export namespace Prisma {
     status?: true
     createdAt?: true
     updatedAt?: true
+    attendance?: true
+    footfall?: true
+    sentiment?: true
+    behaviour?: true
+    irrigation?: true
+    landscaping?: true
+    litter_detection?: true
+    smoking_detection?: true
+    intrusion?: true
+    stream_url?: true
+    stream_api_key?: true
+    stream_path?: true
+    password?: true
     _all?: true
   }
 
@@ -9770,6 +9848,19 @@ export namespace Prisma {
     status: string | null
     createdAt: Date | null
     updatedAt: Date
+    attendance: boolean | null
+    footfall: boolean | null
+    sentiment: boolean | null
+    behaviour: boolean | null
+    irrigation: boolean | null
+    landscaping: boolean | null
+    litter_detection: boolean | null
+    smoking_detection: boolean | null
+    intrusion: boolean | null
+    stream_url: string | null
+    stream_api_key: string | null
+    stream_path: string | null
+    password: string | null
     _count: Park_camerasCountAggregateOutputType | null
     _avg: Park_camerasAvgAggregateOutputType | null
     _sum: Park_camerasSumAggregateOutputType | null
@@ -9805,6 +9896,19 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
+    behaviour?: boolean
+    irrigation?: boolean
+    landscaping?: boolean
+    litter_detection?: boolean
+    smoking_detection?: boolean
+    intrusion?: boolean
+    stream_url?: boolean
+    stream_api_key?: boolean
+    stream_path?: boolean
+    password?: boolean
     live_stream_favourites?: boolean | park_cameras$live_stream_favouritesArgs<ExtArgs>
     parks?: boolean | park_cameras$parksArgs<ExtArgs>
     parks_behaviour_alerts?: boolean | park_cameras$parks_behaviour_alertsArgs<ExtArgs>
@@ -9831,9 +9935,22 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
+    behaviour?: boolean
+    irrigation?: boolean
+    landscaping?: boolean
+    litter_detection?: boolean
+    smoking_detection?: boolean
+    intrusion?: boolean
+    stream_url?: boolean
+    stream_api_key?: boolean
+    stream_path?: boolean
+    password?: boolean
   }
 
-  export type park_camerasOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Id" | "park_Id" | "camera_Id" | "camera_english_name" | "camera_arabic_name" | "latitude" | "longitude" | "ip_address" | "last_active_date" | "last_active_time" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["park_cameras"]>
+  export type park_camerasOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Id" | "park_Id" | "camera_Id" | "camera_english_name" | "camera_arabic_name" | "latitude" | "longitude" | "ip_address" | "last_active_date" | "last_active_time" | "status" | "createdAt" | "updatedAt" | "attendance" | "footfall" | "sentiment" | "behaviour" | "irrigation" | "landscaping" | "litter_detection" | "smoking_detection" | "intrusion" | "stream_url" | "stream_api_key" | "stream_path" | "password", ExtArgs["result"]["park_cameras"]>
   export type park_camerasInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     live_stream_favourites?: boolean | park_cameras$live_stream_favouritesArgs<ExtArgs>
     parks?: boolean | park_cameras$parksArgs<ExtArgs>
@@ -9870,6 +9987,19 @@ export namespace Prisma {
       status: string | null
       createdAt: Date | null
       updatedAt: Date
+      attendance: boolean | null
+      footfall: boolean | null
+      sentiment: boolean | null
+      behaviour: boolean | null
+      irrigation: boolean | null
+      landscaping: boolean | null
+      litter_detection: boolean | null
+      smoking_detection: boolean | null
+      intrusion: boolean | null
+      stream_url: string | null
+      stream_api_key: string | null
+      stream_path: string | null
+      password: string | null
     }, ExtArgs["result"]["park_cameras"]>
     composites: {}
   }
@@ -10259,6 +10389,19 @@ export namespace Prisma {
     readonly status: FieldRef<"park_cameras", 'String'>
     readonly createdAt: FieldRef<"park_cameras", 'DateTime'>
     readonly updatedAt: FieldRef<"park_cameras", 'DateTime'>
+    readonly attendance: FieldRef<"park_cameras", 'Boolean'>
+    readonly footfall: FieldRef<"park_cameras", 'Boolean'>
+    readonly sentiment: FieldRef<"park_cameras", 'Boolean'>
+    readonly behaviour: FieldRef<"park_cameras", 'Boolean'>
+    readonly irrigation: FieldRef<"park_cameras", 'Boolean'>
+    readonly landscaping: FieldRef<"park_cameras", 'Boolean'>
+    readonly litter_detection: FieldRef<"park_cameras", 'Boolean'>
+    readonly smoking_detection: FieldRef<"park_cameras", 'Boolean'>
+    readonly intrusion: FieldRef<"park_cameras", 'Boolean'>
+    readonly stream_url: FieldRef<"park_cameras", 'String'>
+    readonly stream_api_key: FieldRef<"park_cameras", 'String'>
+    readonly stream_path: FieldRef<"park_cameras", 'String'>
+    readonly password: FieldRef<"park_cameras", 'String'>
   }
     
 
@@ -26573,7 +26716,20 @@ export namespace Prisma {
     last_active_time: 'last_active_time',
     status: 'status',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    updatedAt: 'updatedAt',
+    attendance: 'attendance',
+    footfall: 'footfall',
+    sentiment: 'sentiment',
+    behaviour: 'behaviour',
+    irrigation: 'irrigation',
+    landscaping: 'landscaping',
+    litter_detection: 'litter_detection',
+    smoking_detection: 'smoking_detection',
+    intrusion: 'intrusion',
+    stream_url: 'stream_url',
+    stream_api_key: 'stream_api_key',
+    stream_path: 'stream_path',
+    password: 'password'
   };
 
   export type Park_camerasScalarFieldEnum = (typeof Park_camerasScalarFieldEnum)[keyof typeof Park_camerasScalarFieldEnum]
@@ -26922,7 +27078,11 @@ export namespace Prisma {
     camera_english_name: 'camera_english_name',
     camera_arabic_name: 'camera_arabic_name',
     ip_address: 'ip_address',
-    status: 'status'
+    status: 'status',
+    stream_url: 'stream_url',
+    stream_api_key: 'stream_api_key',
+    stream_path: 'stream_path',
+    password: 'password'
   };
 
   export type park_camerasOrderByRelevanceFieldEnum = (typeof park_camerasOrderByRelevanceFieldEnum)[keyof typeof park_camerasOrderByRelevanceFieldEnum]
@@ -27108,6 +27268,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'parks_attendance_attendance_of'
    */
   export type Enumparks_attendance_attendance_ofFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'parks_attendance_attendance_of'>
@@ -27118,13 +27285,6 @@ export namespace Prisma {
    * Reference to a field of type 'parks_sentiment_analysis_sentiment_of'
    */
   export type Enumparks_sentiment_analysis_sentiment_ofFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'parks_sentiment_analysis_sentiment_of'>
-    
-
-
-  /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -27692,6 +27852,19 @@ export namespace Prisma {
     status?: StringNullableFilter<"park_cameras"> | string | null
     createdAt?: DateTimeNullableFilter<"park_cameras"> | Date | string | null
     updatedAt?: DateTimeFilter<"park_cameras"> | Date | string
+    attendance?: BoolNullableFilter<"park_cameras"> | boolean | null
+    footfall?: BoolNullableFilter<"park_cameras"> | boolean | null
+    sentiment?: BoolNullableFilter<"park_cameras"> | boolean | null
+    behaviour?: BoolNullableFilter<"park_cameras"> | boolean | null
+    irrigation?: BoolNullableFilter<"park_cameras"> | boolean | null
+    landscaping?: BoolNullableFilter<"park_cameras"> | boolean | null
+    litter_detection?: BoolNullableFilter<"park_cameras"> | boolean | null
+    smoking_detection?: BoolNullableFilter<"park_cameras"> | boolean | null
+    intrusion?: BoolNullableFilter<"park_cameras"> | boolean | null
+    stream_url?: StringNullableFilter<"park_cameras"> | string | null
+    stream_api_key?: StringNullableFilter<"park_cameras"> | string | null
+    stream_path?: StringNullableFilter<"park_cameras"> | string | null
+    password?: StringNullableFilter<"park_cameras"> | string | null
     live_stream_favourites?: Live_stream_favouritesListRelationFilter
     parks?: XOR<ParksNullableScalarRelationFilter, parksWhereInput> | null
     parks_behaviour_alerts?: Parks_behaviour_alertsListRelationFilter
@@ -27715,6 +27888,19 @@ export namespace Prisma {
     status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrderInput | SortOrder
+    footfall?: SortOrderInput | SortOrder
+    sentiment?: SortOrderInput | SortOrder
+    behaviour?: SortOrderInput | SortOrder
+    irrigation?: SortOrderInput | SortOrder
+    landscaping?: SortOrderInput | SortOrder
+    litter_detection?: SortOrderInput | SortOrder
+    smoking_detection?: SortOrderInput | SortOrder
+    intrusion?: SortOrderInput | SortOrder
+    stream_url?: SortOrderInput | SortOrder
+    stream_api_key?: SortOrderInput | SortOrder
+    stream_path?: SortOrderInput | SortOrder
+    password?: SortOrderInput | SortOrder
     live_stream_favourites?: live_stream_favouritesOrderByRelationAggregateInput
     parks?: parksOrderByWithRelationInput
     parks_behaviour_alerts?: parks_behaviour_alertsOrderByRelationAggregateInput
@@ -27727,11 +27913,11 @@ export namespace Prisma {
 
   export type park_camerasWhereUniqueInput = Prisma.AtLeast<{
     Id?: number
+    camera_Id?: string
     AND?: park_camerasWhereInput | park_camerasWhereInput[]
     OR?: park_camerasWhereInput[]
     NOT?: park_camerasWhereInput | park_camerasWhereInput[]
     park_Id?: IntNullableFilter<"park_cameras"> | number | null
-    camera_Id?: StringNullableFilter<"park_cameras"> | string | null
     camera_english_name?: StringNullableFilter<"park_cameras"> | string | null
     camera_arabic_name?: StringNullableFilter<"park_cameras"> | string | null
     latitude?: DecimalNullableFilter<"park_cameras"> | Decimal | DecimalJsLike | number | string | null
@@ -27742,6 +27928,19 @@ export namespace Prisma {
     status?: StringNullableFilter<"park_cameras"> | string | null
     createdAt?: DateTimeNullableFilter<"park_cameras"> | Date | string | null
     updatedAt?: DateTimeFilter<"park_cameras"> | Date | string
+    attendance?: BoolNullableFilter<"park_cameras"> | boolean | null
+    footfall?: BoolNullableFilter<"park_cameras"> | boolean | null
+    sentiment?: BoolNullableFilter<"park_cameras"> | boolean | null
+    behaviour?: BoolNullableFilter<"park_cameras"> | boolean | null
+    irrigation?: BoolNullableFilter<"park_cameras"> | boolean | null
+    landscaping?: BoolNullableFilter<"park_cameras"> | boolean | null
+    litter_detection?: BoolNullableFilter<"park_cameras"> | boolean | null
+    smoking_detection?: BoolNullableFilter<"park_cameras"> | boolean | null
+    intrusion?: BoolNullableFilter<"park_cameras"> | boolean | null
+    stream_url?: StringNullableFilter<"park_cameras"> | string | null
+    stream_api_key?: StringNullableFilter<"park_cameras"> | string | null
+    stream_path?: StringNullableFilter<"park_cameras"> | string | null
+    password?: StringNullableFilter<"park_cameras"> | string | null
     live_stream_favourites?: Live_stream_favouritesListRelationFilter
     parks?: XOR<ParksNullableScalarRelationFilter, parksWhereInput> | null
     parks_behaviour_alerts?: Parks_behaviour_alertsListRelationFilter
@@ -27749,7 +27948,7 @@ export namespace Prisma {
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: Parks_sentiment_analysisListRelationFilter
     parks_sentiment_analysis_parks_sentiment_analysis_exit_camera_IdTopark_cameras?: Parks_sentiment_analysisListRelationFilter
     parks_smoking_detection?: Parks_smoking_detectionListRelationFilter
-  }, "Id">
+  }, "Id" | "camera_Id">
 
   export type park_camerasOrderByWithAggregationInput = {
     Id?: SortOrder
@@ -27765,6 +27964,19 @@ export namespace Prisma {
     status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrderInput | SortOrder
+    footfall?: SortOrderInput | SortOrder
+    sentiment?: SortOrderInput | SortOrder
+    behaviour?: SortOrderInput | SortOrder
+    irrigation?: SortOrderInput | SortOrder
+    landscaping?: SortOrderInput | SortOrder
+    litter_detection?: SortOrderInput | SortOrder
+    smoking_detection?: SortOrderInput | SortOrder
+    intrusion?: SortOrderInput | SortOrder
+    stream_url?: SortOrderInput | SortOrder
+    stream_api_key?: SortOrderInput | SortOrder
+    stream_path?: SortOrderInput | SortOrder
+    password?: SortOrderInput | SortOrder
     _count?: park_camerasCountOrderByAggregateInput
     _avg?: park_camerasAvgOrderByAggregateInput
     _max?: park_camerasMaxOrderByAggregateInput
@@ -27789,6 +28001,19 @@ export namespace Prisma {
     status?: StringNullableWithAggregatesFilter<"park_cameras"> | string | null
     createdAt?: DateTimeNullableWithAggregatesFilter<"park_cameras"> | Date | string | null
     updatedAt?: DateTimeWithAggregatesFilter<"park_cameras"> | Date | string
+    attendance?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    footfall?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    sentiment?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    behaviour?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    irrigation?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    landscaping?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    litter_detection?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    smoking_detection?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    intrusion?: BoolNullableWithAggregatesFilter<"park_cameras"> | boolean | null
+    stream_url?: StringNullableWithAggregatesFilter<"park_cameras"> | string | null
+    stream_api_key?: StringNullableWithAggregatesFilter<"park_cameras"> | string | null
+    stream_path?: StringNullableWithAggregatesFilter<"park_cameras"> | string | null
+    password?: StringNullableWithAggregatesFilter<"park_cameras"> | string | null
   }
 
   export type park_streamsWhereInput = {
@@ -29827,6 +30052,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
@@ -29850,6 +30088,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
@@ -29870,6 +30121,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
@@ -29893,6 +30157,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
@@ -29915,6 +30192,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
   }
 
   export type park_camerasUpdateManyMutationInput = {
@@ -29929,6 +30219,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type park_camerasUncheckedUpdateManyInput = {
@@ -29945,6 +30248,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type park_streamsCreateInput = {
@@ -32181,6 +32497,11 @@ export namespace Prisma {
     _max?: NestedEnumoffices_sentiment_analysis_sentiment_ofNullableFilter<$PrismaModel>
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type ParksNullableScalarRelationFilter = {
     is?: parksWhereInput | null
     isNot?: parksWhereInput | null
@@ -32246,6 +32567,19 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
+    behaviour?: SortOrder
+    irrigation?: SortOrder
+    landscaping?: SortOrder
+    litter_detection?: SortOrder
+    smoking_detection?: SortOrder
+    intrusion?: SortOrder
+    stream_url?: SortOrder
+    stream_api_key?: SortOrder
+    stream_path?: SortOrder
+    password?: SortOrder
   }
 
   export type park_camerasAvgOrderByAggregateInput = {
@@ -32269,6 +32603,19 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
+    behaviour?: SortOrder
+    irrigation?: SortOrder
+    landscaping?: SortOrder
+    litter_detection?: SortOrder
+    smoking_detection?: SortOrder
+    intrusion?: SortOrder
+    stream_url?: SortOrder
+    stream_api_key?: SortOrder
+    stream_path?: SortOrder
+    password?: SortOrder
   }
 
   export type park_camerasMinOrderByAggregateInput = {
@@ -32285,6 +32632,19 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
+    behaviour?: SortOrder
+    irrigation?: SortOrder
+    landscaping?: SortOrder
+    litter_detection?: SortOrder
+    smoking_detection?: SortOrder
+    intrusion?: SortOrder
+    stream_url?: SortOrder
+    stream_api_key?: SortOrder
+    stream_path?: SortOrder
+    password?: SortOrder
   }
 
   export type park_camerasSumOrderByAggregateInput = {
@@ -32292,6 +32652,14 @@ export namespace Prisma {
     park_Id?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type park_streamsOrderByRelevanceInput = {
@@ -33035,11 +33403,6 @@ export namespace Prisma {
     camera_Id?: SortOrder
   }
 
-  export type BoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
-  }
-
   export type Users_rolesNullableScalarRelationFilter = {
     is?: users_rolesWhereInput | null
     isNot?: users_rolesWhereInput | null
@@ -33131,14 +33494,6 @@ export namespace Prisma {
   export type usersSumOrderByAggregateInput = {
     Id?: SortOrder
     role_Id?: SortOrder
-  }
-
-  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type users_permissionsCountOrderByAggregateInput = {
@@ -33938,6 +34293,10 @@ export namespace Prisma {
     connectOrCreate?: parks_smoking_detectionCreateOrConnectWithoutPark_camerasInput | parks_smoking_detectionCreateOrConnectWithoutPark_camerasInput[]
     createMany?: parks_smoking_detectionCreateManyPark_camerasInputEnvelope
     connect?: parks_smoking_detectionWhereUniqueInput | parks_smoking_detectionWhereUniqueInput[]
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
   }
 
   export type live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput = {
@@ -34906,10 +35265,6 @@ export namespace Prisma {
     connect?: live_stream_favouritesWhereUniqueInput | live_stream_favouritesWhereUniqueInput[]
   }
 
-  export type NullableBoolFieldUpdateOperationsInput = {
-    set?: boolean | null
-  }
-
   export type live_stream_favouritesUpdateManyWithoutUsersNestedInput = {
     create?: XOR<live_stream_favouritesCreateWithoutUsersInput, live_stream_favouritesUncheckedCreateWithoutUsersInput> | live_stream_favouritesCreateWithoutUsersInput[] | live_stream_favouritesUncheckedCreateWithoutUsersInput[]
     connectOrCreate?: live_stream_favouritesCreateOrConnectWithoutUsersInput | live_stream_favouritesCreateOrConnectWithoutUsersInput[]
@@ -35268,6 +35623,19 @@ export namespace Prisma {
     _max?: NestedEnumoffices_sentiment_analysis_sentiment_ofNullableFilter<$PrismaModel>
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
   export type NestedEnumparks_attendance_attendance_ofNullableFilter<$PrismaModel = never> = {
     equals?: $Enums.parks_attendance_attendance_of | Enumparks_attendance_attendance_ofFieldRefInput<$PrismaModel> | null
     in?: $Enums.parks_attendance_attendance_of[] | null
@@ -35300,19 +35668,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedEnumparks_sentiment_analysis_sentiment_ofNullableFilter<$PrismaModel>
     _max?: NestedEnumparks_sentiment_analysis_sentiment_ofNullableFilter<$PrismaModel>
-  }
-
-  export type NestedBoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
-  }
-
-  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type usersCreateWithoutLive_stream_favouritesInput = {
@@ -35379,6 +35734,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionCreateNestedManyWithoutPark_camerasInput
@@ -35401,6 +35769,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: parks_sentiment_analysisUncheckedCreateNestedManyWithoutPark_cameras_parks_sentiment_analysis_entry_camera_IdTopark_camerasInput
@@ -35534,6 +35915,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUpdateManyWithoutPark_camerasNestedInput
@@ -35556,6 +35950,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: parks_sentiment_analysisUncheckedUpdateManyWithoutPark_cameras_parks_sentiment_analysis_entry_camera_IdTopark_camerasNestedInput
@@ -37281,6 +37688,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionCreateNestedManyWithoutPark_camerasInput
@@ -37302,6 +37722,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
@@ -37693,6 +38126,19 @@ export namespace Prisma {
     status?: StringNullableFilter<"park_cameras"> | string | null
     createdAt?: DateTimeNullableFilter<"park_cameras"> | Date | string | null
     updatedAt?: DateTimeFilter<"park_cameras"> | Date | string
+    attendance?: BoolNullableFilter<"park_cameras"> | boolean | null
+    footfall?: BoolNullableFilter<"park_cameras"> | boolean | null
+    sentiment?: BoolNullableFilter<"park_cameras"> | boolean | null
+    behaviour?: BoolNullableFilter<"park_cameras"> | boolean | null
+    irrigation?: BoolNullableFilter<"park_cameras"> | boolean | null
+    landscaping?: BoolNullableFilter<"park_cameras"> | boolean | null
+    litter_detection?: BoolNullableFilter<"park_cameras"> | boolean | null
+    smoking_detection?: BoolNullableFilter<"park_cameras"> | boolean | null
+    intrusion?: BoolNullableFilter<"park_cameras"> | boolean | null
+    stream_url?: StringNullableFilter<"park_cameras"> | string | null
+    stream_api_key?: StringNullableFilter<"park_cameras"> | string | null
+    stream_path?: StringNullableFilter<"park_cameras"> | string | null
+    password?: StringNullableFilter<"park_cameras"> | string | null
   }
 
   export type park_streamsUpsertWithWhereUniqueWithoutParksInput = {
@@ -38098,6 +38544,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionCreateNestedManyWithoutPark_camerasInput
@@ -38120,6 +38579,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: parks_sentiment_analysisUncheckedCreateNestedManyWithoutPark_cameras_parks_sentiment_analysis_entry_camera_IdTopark_camerasInput
@@ -38209,6 +38681,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUpdateManyWithoutPark_camerasNestedInput
@@ -38231,6 +38716,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: parks_sentiment_analysisUncheckedUpdateManyWithoutPark_cameras_parks_sentiment_analysis_entry_camera_IdTopark_camerasNestedInput
@@ -38298,6 +38796,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
@@ -38320,6 +38831,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: parks_sentiment_analysisUncheckedCreateNestedManyWithoutPark_cameras_parks_sentiment_analysis_entry_camera_IdTopark_camerasInput
@@ -38409,6 +38933,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
@@ -38431,6 +38968,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras?: parks_sentiment_analysisUncheckedUpdateManyWithoutPark_cameras_parks_sentiment_analysis_entry_camera_IdTopark_camerasNestedInput
@@ -38878,6 +39428,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
@@ -38900,6 +39463,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
@@ -38924,6 +39500,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
@@ -38946,6 +39535,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
@@ -39035,6 +39637,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
@@ -39057,6 +39672,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
@@ -39087,6 +39715,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
@@ -39109,6 +39750,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
@@ -39176,6 +39830,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutPark_camerasInput
     parks?: parksCreateNestedOneWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsCreateNestedManyWithoutPark_camerasInput
@@ -39198,6 +39865,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedCreateNestedManyWithoutPark_camerasInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedCreateNestedManyWithoutPark_camerasInput
@@ -39287,6 +39967,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks?: parksUpdateOneWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
@@ -39309,6 +40002,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
@@ -40470,6 +41176,19 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean | null
+    footfall?: boolean | null
+    sentiment?: boolean | null
+    behaviour?: boolean | null
+    irrigation?: boolean | null
+    landscaping?: boolean | null
+    litter_detection?: boolean | null
+    smoking_detection?: boolean | null
+    intrusion?: boolean | null
+    stream_url?: string | null
+    stream_api_key?: string | null
+    stream_path?: string | null
+    password?: string | null
   }
 
   export type park_streamsCreateManyParksInput = {
@@ -40608,6 +41327,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUpdateManyWithoutPark_camerasNestedInput
@@ -40629,6 +41361,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_behaviour_alerts?: parks_behaviour_alertsUncheckedUpdateManyWithoutPark_camerasNestedInput
     parks_intrusion_detection?: parks_intrusion_detectionUncheckedUpdateManyWithoutPark_camerasNestedInput
@@ -40650,6 +41395,19 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    footfall?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    sentiment?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    behaviour?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    irrigation?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    landscaping?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    litter_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    smoking_detection?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    intrusion?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    stream_url?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_api_key?: NullableStringFieldUpdateOperationsInput | string | null
+    stream_path?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type park_streamsUpdateWithoutParksInput = {

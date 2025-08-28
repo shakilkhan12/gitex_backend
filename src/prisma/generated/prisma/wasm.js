@@ -213,7 +213,20 @@ exports.Prisma.Park_camerasScalarFieldEnum = {
   last_active_time: 'last_active_time',
   status: 'status',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  attendance: 'attendance',
+  footfall: 'footfall',
+  sentiment: 'sentiment',
+  behaviour: 'behaviour',
+  irrigation: 'irrigation',
+  landscaping: 'landscaping',
+  litter_detection: 'litter_detection',
+  smoking_detection: 'smoking_detection',
+  intrusion: 'intrusion',
+  stream_url: 'stream_url',
+  stream_api_key: 'stream_api_key',
+  stream_path: 'stream_path',
+  password: 'password'
 };
 
 exports.Prisma.Park_streamsScalarFieldEnum = {
@@ -496,7 +509,11 @@ exports.Prisma.park_camerasOrderByRelevanceFieldEnum = {
   camera_english_name: 'camera_english_name',
   camera_arabic_name: 'camera_arabic_name',
   ip_address: 'ip_address',
-  status: 'status'
+  status: 'status',
+  stream_url: 'stream_url',
+  stream_api_key: 'stream_api_key',
+  stream_path: 'stream_path',
+  password: 'password'
 };
 
 exports.Prisma.park_streamsOrderByRelevanceFieldEnum = {

@@ -121,7 +121,7 @@ model offices_sentiment_analysis {
 model park_cameras {
   Id                                                                              Int                         @id @default(autoincrement())
   park_Id                                                                         Int?
-  camera_Id                                                                       String?                     @db.VarChar(255)
+  camera_Id                                                                       String?                     @unique @db.VarChar(255)
   camera_english_name                                                             String?                     @db.VarChar(255)
   camera_arabic_name                                                              String?                     @db.VarChar(255)
   latitude                                                                        Decimal?                    @db.Decimal(10, 8)
@@ -139,6 +139,22 @@ model park_cameras {
   parks_sentiment_analysis_parks_sentiment_analysis_entry_camera_IdTopark_cameras parks_sentiment_analysis[]  @relation("parks_sentiment_analysis_entry_camera_IdTopark_cameras")
   parks_sentiment_analysis_parks_sentiment_analysis_exit_camera_IdTopark_cameras  parks_sentiment_analysis[]  @relation("parks_sentiment_analysis_exit_camera_IdTopark_cameras")
   parks_smoking_detection                                                         parks_smoking_detection[]
+
+  // ✅ Functionalities (all 9 as Boolean flags)
+  attendance        Boolean? @default(false)
+  footfall          Boolean? @default(false)
+  sentiment         Boolean? @default(false)
+  behaviour         Boolean? @default(false)
+  irrigation        Boolean? @default(false)
+  landscaping       Boolean? @default(false)
+  litter_detection  Boolean? @default(false)
+  smoking_detection Boolean? @default(false)
+  intrusion         Boolean? @default(false)
+  // ✅ Streaming-related columns
+  stream_url        String?  @db.VarChar(255)
+  stream_api_key    String?  @db.VarChar(255)
+  stream_path       String?  @db.VarChar(255)
+  password          String?  @db.VarChar(255)
 
   @@index([park_Id], map: "park_Id")
 }
