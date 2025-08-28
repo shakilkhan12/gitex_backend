@@ -1,9 +1,9 @@
-import { body  } from "express-validator";
-export const parkValidations = [
-    body('park_Id').trim().notEmpty().withMessage('park id is required'),
-    body('park_english_name').trim().notEmpty().withMessage('english name is required'),
-    body('park_arabic_name').trim().notEmpty().withMessage('arabic name is required'),
-    body('image').trim().notEmpty().withMessage('image is required'),
-    body('latitude').trim().isFloat().withMessage('latitude is required'),
-    body('longitude').trim().isFloat().withMessage('longitude is required'),
-]
+export { parkValidations } from "./park.validations";
+export { smokingDetectionValidations } from "./smoking-detection.validations";
+export { litterDetectionValidations } from "./litter-detection.validations";
+export { landscapingValidations } from "./landscaping.validations";
+export { behaviorAlertsValidations } from "./behavior-alerts.validations";
+export { officeSentimentAnalysisValidations } from "./office-sentiment-analysis.validations";
+export { parkSentimentAnalysisValidations } from "./park-sentiment-analysis.validations";
+export { officeAttendanceValidations } from "./office-attendance.validations";
+export { parkAttendanceValidations } from "./park-attendance.validations";
