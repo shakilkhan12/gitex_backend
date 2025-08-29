@@ -7,6 +7,15 @@ export const parkValidations = [
     // body('latitude').trim().isFloat().withMessage('latitude is required'),
     // body('longitude').trim().isFloat().withMessage('longitude is required'),
 ]
+export const parkBasicInfoValidations = [
+    body('park_Id').trim().notEmpty().withMessage('park id is required'),
+    // body('park_english_name').trim().notEmpty().withMessage('english name is required'),
+    // body('park_arabic_name').trim().notEmpty().withMessage('arabic name is required'),
+    // body('location').trim().notEmpty().withMessage('location is required'),
+]
+export const officeBasicInfoValidations = [
+    body('office_Id').trim().notEmpty().withMessage('office id is required')
+]
 export const parkZoneValidations = [
     body('park_Id').notEmpty().withMessage("park_Id is required").isInt({min: 1}).withMessage('park id must be valid integer'),
     body('zone_Id').trim().notEmpty().withMessage('zone id is required'),

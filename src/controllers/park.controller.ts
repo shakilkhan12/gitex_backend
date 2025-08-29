@@ -117,13 +117,26 @@ const { camera_Id, ...fields } = req.body;
   }
   // update setting 
   public static updateSetting = async (req: Request <{}, {}, SettingInputTypes>, res: Response, next: NextFunction) => {
-    const cameraId = req.body.camera_Id
-    if(!cameraId) {
-      return res.status(STATUS.BAD_REQUEST).json({message: 'camera id is required'})
+    const parkId = req.body.park_Id
+    if(!parkId) {
+      return res.status(STATUS.BAD_REQUEST).json({message: 'park id is required'})
     }
     try {
       const settingUpdated = await ParkService.changeParkSettingService(req.body);
       return res.status(STATUS.CREATED).json(settingUpdated)
+    } catch (error) {
+      next(error)
+    }
+  }
+  public static updateParkBasicInfo = async (req: Request <{}, {}, ParkType>, res: Response, next: NextFunction) => {
+    try {
+      const errors = validationResult(req);
+      if(errors.isEmpty()) {
+        const basicInfo = await ParkService.updateParkBasicInfoService(req.body)
+        return res.status(STATUS.CREATED).json(basicInfo)
+      } else {
+        return res.status(STATUS.BAD_REQUEST).json({errors: errors.array()})
+      }
     } catch (error) {
       next(error)
     }

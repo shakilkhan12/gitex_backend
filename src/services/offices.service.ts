@@ -1,4 +1,4 @@
-import { ParkType, STATUS, ParkZone, ParkCamera, SettingInputTypes, OfficeType, OfficeCamera } from "@/typescript";
+import { ParkType, STATUS, ParkZone, ParkCamera, SettingInputTypes, OfficeType, OfficeCamera, OfficeSettingInputTypes } from "@/typescript";
 import db from "@/prisma/client";
 import { HttpException } from "@/utils/HttpException.utils";
 
@@ -22,43 +22,26 @@ class OfficesService {
          include: {
           offices_cameras: true,
     },
+    orderBy: {
+    Id: "desc",
+  },
       });
    }
-//    // get park zones service
-//    protected static getParkZonesService = async (park_Id: number) => {
-//       if(!park_Id) {
-//           throw new HttpException(STATUS.BAD_REQUEST, `park id is required`)
-//       }
-//    return await db.park_zones.findMany({
-//       where: {
-//          park_Id: Number(park_Id)
-//       }
-//    });
-//    }
-//    // get park cameras service
-//     protected static getParkCamerasService = async (park_Id: number) => {
-//       if(!park_Id) {
-//           throw new HttpException(STATUS.BAD_REQUEST, `park id is required`)
-//       }
-//     return await db.park_cameras.findMany({
-//       where: {
-//          park_Id: Number(park_Id)
-//       }
-//    });
-//    }
-//    // add park zone service
-//    protected static addParkZoneService = async (zoneData: ParkZone) => {
-//       const zoneExist = await db.park_zones.findFirst({
-//                where: { zone_Id: zoneData.zone_Id },
-//            });
-//       if(zoneExist) {
-//          throw new HttpException(STATUS.BAD_REQUEST, `${zoneData.zone_Id} zone id is already exist`);
-//       }
-//       const result = await db.park_zones.create({
-//          data: {...zoneData, createdAt: new Date() }
-//       });
-//   return result;
-//    }
+
+   // get park cameras service
+    protected static getOfficeCamerasService = async (office_Id: number) => {
+      if(!office_Id) {
+          throw new HttpException(STATUS.BAD_REQUEST, `office id is required`)
+      }
+    return await db.offices_cameras.findMany({
+      where: {
+         office_Id: Number(office_Id)
+      },
+       orderBy: {
+    Id: "desc",
+  },
+   });
+   }
    // add park camera service
    protected static addOfficeCameraService = async (cameraData: OfficeCamera) => {
       const cameraExist = await db.offices_cameras.findFirst({
@@ -72,29 +55,48 @@ class OfficesService {
       })
       return result;
    }
-//    protected static changeParkCameraFunctionalityService = async ({fieldName, fieldValue, camera_Id}: {fieldName: string, fieldValue: any, camera_Id: string}) => {
-//         const result = db.park_cameras.update({
-//         where: { camera_Id: String(camera_Id) },
-//         data: {
-//         [fieldName]: fieldValue,
-//         updatedAt: new Date(),
-//       },
-//     });
-//     return result;
-//    }
-//    protected static changeParkSettingService = async (setting: SettingInputTypes) => {
-//       const {password, stream_api_key, stream_path, stream_url} = setting;
-//       const result = db.park_cameras.update({
-//         where: { camera_Id: setting.camera_Id },
-//         data: {
-//         password,
-//         stream_api_key,
-//         stream_path,
-//         stream_url
-//       },
-//     });
-//     return result;
-//    }
+   protected static changeOfficeCameraFunctionalityService = async ({fieldName, fieldValue, camera_Id, }: {fieldName: string, fieldValue: any, camera_Id: string}) => {
+        const result = db.offices_cameras.update({
+        where: { camera_Id: String(camera_Id)},
+        data: {
+        [fieldName]: fieldValue,
+        updatedAt: new Date(),
+      },
+    });
+    return result;
+   }
+   protected static changeOfficeSettingService = async (setting: OfficeSettingInputTypes) => {
+      const {password, stream_api_key, stream_path, stream_url} = setting;
+      const result = db.office_streams.update({
+        where: { office_Id: Number(setting.office_Id) },
+        data: {
+        password,
+        stream_api_key,
+        stream_path,
+        stream_url
+      },
+    });
+    return result;
+   }
+   protected static updateOfficeBasicInfoService = async (basicInfo: OfficeType) => {
+      const {office_Id, office_arabic_name, office_english_name, longitude, latitude} = basicInfo
+      const parkExist = await db.offices.findFirst({
+               where: { office_Id: office_Id },
+           });
+           if(!parkExist) {
+              throw new HttpException(STATUS.BAD_REQUEST, `No office found with the given ID`);
+           }
+       const result = db.offices.update({
+        where: { office_Id: String(office_Id) },
+        data: {
+        office_arabic_name,
+        office_english_name,
+        latitude,
+        longitude
+      },
+    });
+    return result;
+   }
    
 }
 export default OfficesService;

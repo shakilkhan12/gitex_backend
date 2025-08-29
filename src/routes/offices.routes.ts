@@ -1,13 +1,12 @@
-import { OfficesController, ParkController } from "@/controllers";
-import { officeValidations, parkCameraValidations, parkValidations, parkZoneValidations } from "@/validations";
+import { OfficesController } from "@/controllers";
+import { officeBasicInfoValidations, officeValidations } from "@/validations";
 import { Router } from "express";
 const officesRouter  = Router();
 officesRouter.post('/add',officeValidations, OfficesController.addOffice)
-officesRouter.post('/add-park-zone', parkZoneValidations, ParkController.addParkZone)
 officesRouter.post('/add-office-camera', officeValidations, OfficesController.addOfficeCamera)
-officesRouter.put("/update-park-camera-function",ParkController.changeParkCameraFunctionality)
-officesRouter.put('/update-park-camera-settings', ParkController.updateSetting)
+officesRouter.put("/update-office-camera-function",OfficesController.changeOfficeCameraFunctionality)
+officesRouter.put('/update-office-settings', OfficesController.updateOfficeSetting)
+officesRouter.put('/update-office-basic-info', officeBasicInfoValidations, OfficesController.updateOfficeBasicInfo);
 officesRouter.get('/get', OfficesController.getOffices)
-officesRouter.get('/get-park-zones/:parkId', ParkController.getParkZones)
-officesRouter.get('/get-park-cameras/:parkId', ParkController.getParkCameras)
+officesRouter.get('/get-office-cameras/:officeId', OfficesController.getOfficeCameras)
 export default officesRouter;

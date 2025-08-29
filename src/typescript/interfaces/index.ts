@@ -6,10 +6,10 @@ interface ParkCombine {
 }
 export interface ParkType extends ParkCombine {
   park_Id: string;
-  english_name: string;
-  arabic_name: string;
-  image: string;
-  location: string;
+  park_english_name: string;
+  park_arabic_name: string;
+  image?: string;
+  location?: string;
 }
 export interface ParkZone extends ParkCombine {
   park_Id: number;
@@ -28,7 +28,10 @@ export interface SettingTypes {
   password?:string;
 }
 export interface SettingInputTypes extends SettingTypes {
-     camera_Id: string;
+     park_Id: number;
+}
+export interface OfficeSettingInputTypes extends SettingTypes {
+     office_Id: number;
 }
 export interface ParkCamera extends ParkCombine, SettingTypes{
   park_Id: number;
@@ -54,6 +57,7 @@ export interface OfficeType extends ParkCombine {
   office_english_name?:string;
   office_arabic_name?:string;
   image?:string;
+  location?:string;
 }
 export interface OfficeCamera extends ParkCombine {
   office_Id: number;

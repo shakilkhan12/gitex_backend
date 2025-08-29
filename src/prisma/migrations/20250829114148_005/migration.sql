@@ -24,6 +24,7 @@ CREATE TABLE `office_streams` (
     `createdAt` TIMESTAMP(0) NULL,
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
 
+    UNIQUE INDEX `office_streams_office_Id_key`(`office_Id`),
     INDEX `office_Id`(`office_Id`),
     PRIMARY KEY (`Id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -38,6 +39,7 @@ CREATE TABLE `offices` (
     `latitude` DECIMAL(10, 8) NULL,
     `longitude` DECIMAL(11, 8) NULL,
     `createdAt` TIMESTAMP(0) NULL,
+    `location` VARCHAR(255) NULL,
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
 
     UNIQUE INDEX `office_Id`(`office_Id`),
@@ -79,6 +81,7 @@ CREATE TABLE `offices_cameras` (
     `createdAt` TIMESTAMP(0) NULL,
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
 
+    UNIQUE INDEX `offices_cameras_camera_Id_key`(`camera_Id`),
     INDEX `office_Id`(`office_Id`),
     PRIMARY KEY (`Id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -151,6 +154,7 @@ CREATE TABLE `park_streams` (
     `createdAt` TIMESTAMP(0) NULL,
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
 
+    UNIQUE INDEX `park_streams_park_Id_key`(`park_Id`),
     INDEX `park_Id`(`park_Id`),
     PRIMARY KEY (`Id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -181,6 +185,7 @@ CREATE TABLE `parks` (
     `park_english_name` VARCHAR(255) NULL,
     `park_arabic_name` VARCHAR(255) NULL,
     `image` VARCHAR(255) NULL,
+    `location` VARCHAR(255) NULL,
     `latitude` DECIMAL(10, 8) NULL,
     `longitude` DECIMAL(11, 8) NULL,
     `createdAt` TIMESTAMP(0) NULL,

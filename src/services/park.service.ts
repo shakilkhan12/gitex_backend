@@ -27,6 +27,9 @@ class ParkService {
         },
       },
     },
+    orderBy: {
+    Id: "desc",
+  },
       });
    }
    // get park zones service
@@ -37,7 +40,10 @@ class ParkService {
    return await db.park_zones.findMany({
       where: {
          park_Id: Number(park_Id)
-      }
+      },
+      orderBy: {
+    Id: "desc",
+  },
    });
    }
    // get park cameras service
@@ -48,7 +54,10 @@ class ParkService {
     return await db.park_cameras.findMany({
       where: {
          park_Id: Number(park_Id)
-      }
+      },
+      orderBy: {
+    Id: "desc",
+  },
    });
    }
    // add park zone service
@@ -78,6 +87,12 @@ class ParkService {
       return result;
    }
    protected static changeParkCameraFunctionalityService = async ({fieldName, fieldValue, camera_Id}: {fieldName: string, fieldValue: any, camera_Id: string}) => {
+      const cameraExist = await db.park_cameras.findFirst({
+               where: { camera_Id: String(camera_Id) },
+           });
+           if(!cameraExist) {
+              throw new HttpException(STATUS.BAD_REQUEST, `No camera found with the given ID`);
+           }
         const result = db.park_cameras.update({
         where: { camera_Id: String(camera_Id) },
         data: {
@@ -88,14 +103,40 @@ class ParkService {
     return result;
    }
    protected static changeParkSettingService = async (setting: SettingInputTypes) => {
-      const {password, stream_api_key, stream_path, stream_url} = setting;
-      const result = db.park_cameras.update({
-        where: { camera_Id: setting.camera_Id },
+      const {password, stream_api_key, stream_path, stream_url, park_Id} = setting;
+      const parkExist = await db.park_streams.findFirst({
+               where: { park_Id: Number(park_Id) },
+           });
+           if(!parkExist) {
+              throw new HttpException(STATUS.BAD_REQUEST, `No park stream found with the given ID`);
+           }
+      const result = db.park_streams.update({
+        where: { park_Id: Number(setting.park_Id) },
         data: {
         password,
         stream_api_key,
         stream_path,
-        stream_url
+        stream_url,
+      },
+    });
+    return result;
+   }
+   // update park basic info service
+   protected static updateParkBasicInfoService = async (basicInfo: ParkType) => {
+      const {park_Id, park_arabic_name, park_english_name, latitude, longitude} = basicInfo
+      const parkExist = await db.parks.findFirst({
+               where: { park_Id: park_Id },
+           });
+           if(!parkExist) {
+              throw new HttpException(STATUS.BAD_REQUEST, `No park found with the given ID`);
+           }
+       const result = db.parks.update({
+        where: { park_Id: String(park_Id) },
+        data: {
+        park_arabic_name,
+        park_english_name,
+        latitude,
+        longitude
       },
     });
     return result;

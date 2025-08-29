@@ -26,7 +26,7 @@ model live_stream_favourites {
 
 model office_streams {
   Id             Int       @id @default(autoincrement())
-  office_Id      Int?
+  office_Id      Int?      @unique
   stream_url     String?   @db.VarChar(255)
   stream_api_key String?   @db.VarChar(255)
   stream_path    String?   @db.VarChar(255)
@@ -47,6 +47,7 @@ model offices {
   latitude                   Decimal?                     @db.Decimal(10, 8)
   longitude                  Decimal?                     @db.Decimal(11, 8)
   createdAt                  DateTime?                    @db.Timestamp(0)
+  location                   String?                      @db.VarChar(255)
   updatedAt                  DateTime                     @default(now()) @db.Timestamp(0)
   office_streams             office_streams[]
   offices_attendance         offices_attendance[]
@@ -75,7 +76,7 @@ model offices_attendance {
 model offices_cameras {
   Id                                                                                     Int                          @id @default(autoincrement())
   office_Id                                                                              Int?
-  camera_Id                                                                              String?                      @db.VarChar(255)
+  camera_Id                                                                              String?                      @unique @db.VarChar(255)
   camera_english_name                                                                    String?                      @db.VarChar(255)
   camera_arabic_name                                                                     String?                      @db.VarChar(255)
   latitude                                                                               Decimal?                     @db.Decimal(10, 8)
@@ -161,7 +162,7 @@ model park_cameras {
 
 model park_streams {
   Id             Int       @id @default(autoincrement())
-  park_Id        Int?
+  park_Id        Int?      @unique
   stream_url     String?   @db.VarChar(255)
   stream_api_key String?   @db.VarChar(255)
   stream_path    String?   @db.VarChar(255)
@@ -198,6 +199,7 @@ model parks {
   park_english_name            String?                        @db.VarChar(255)
   park_arabic_name             String?                        @db.VarChar(255)
   image                        String?                        @db.VarChar(255)
+  location                     String?                        @db.VarChar(255)
   latitude                     Decimal?                       @db.Decimal(10, 8)
   longitude                    Decimal?                       @db.Decimal(11, 8)
   createdAt                    DateTime?                      @db.Timestamp(0)
