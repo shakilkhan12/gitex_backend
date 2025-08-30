@@ -9,6 +9,7 @@ import swaggerUi from 'swagger-ui-express';
 import { specs } from './config/swagger';
 import mainRouter from "@/routes";
 import { errorHandler } from "@/middlewares";
+import AccessSecretService from "@/services/access_secret.service";
 
 const app = express();
 const PORT = 5000;
@@ -33,10 +34,20 @@ app.use('/api', mainRouter)
 app.use(errorHandler)
 
 const startServer = async () => {
-    app.listen(PORT, () => {
-      console.log(`🚀  Server ready at: http://localhost:${PORT}/`);
-      console.log(`📚  API Documentation: http://localhost:${PORT}/api-docs`);
-    });
+  app.listen(PORT, () => {
+    console.log(`🚀  Server ready at: http://localhost:${PORT}/`);
+    console.log(`📚  API Documentation: http://localhost:${PORT}/api-docs`);
+  });
+
+  // Run once immediately
+  AccessSecretService.updateAccessSecret()
+    .then(() => console.log("🔑 Initial Access Secret updated"))
+    .catch((err) => console.error("❌ Failed to update Access Secret:", err));
+
+  // Start daily cron job
+  AccessSecretService.startCronJob();
 };
+
+
 
 startServer();

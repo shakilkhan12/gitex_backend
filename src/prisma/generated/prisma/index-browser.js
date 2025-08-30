@@ -120,6 +120,11 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.Access_secretScalarFieldEnum = {
+  Id: 'Id',
+  value: 'value'
+};
+
 exports.Prisma.Live_stream_favouritesScalarFieldEnum = {
   Id: 'Id',
   emp_Id: 'emp_Id',
@@ -457,6 +462,10 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
+exports.Prisma.access_secretOrderByRelevanceFieldEnum = {
+  value: 'value'
+};
+
 exports.Prisma.office_streamsOrderByRelevanceFieldEnum = {
   stream_url: 'stream_url',
   stream_api_key: 'stream_api_key',
@@ -612,6 +621,7 @@ exports.parks_sentiment_analysis_sentiment_of = exports.$Enums.parks_sentiment_a
 };
 
 exports.Prisma.ModelName = {
+  access_secret: 'access_secret',
   live_stream_favourites: 'live_stream_favourites',
   office_streams: 'office_streams',
   offices: 'offices',

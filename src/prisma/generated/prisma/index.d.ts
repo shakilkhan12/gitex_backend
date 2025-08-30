@@ -14,6 +14,11 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
+ * Model access_secret
+ * 
+ */
+export type access_secret = $Result.DefaultSelection<Prisma.$access_secretPayload>
+/**
  * Model live_stream_favourites
  * 
  */
@@ -179,8 +184,8 @@ export const parks_sentiment_analysis_sentiment_of: typeof $Enums.parks_sentimen
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Live_stream_favourites
- * const live_stream_favourites = await prisma.live_stream_favourites.findMany()
+ * // Fetch zero or more Access_secrets
+ * const access_secrets = await prisma.access_secret.findMany()
  * ```
  *
  *
@@ -200,8 +205,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Live_stream_favourites
-   * const live_stream_favourites = await prisma.live_stream_favourites.findMany()
+   * // Fetch zero or more Access_secrets
+   * const access_secrets = await prisma.access_secret.findMany()
    * ```
    *
    *
@@ -291,6 +296,16 @@ export class PrismaClient<
   }>>
 
       /**
+   * `prisma.access_secret`: Exposes CRUD operations for the **access_secret** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Access_secrets
+    * const access_secrets = await prisma.access_secret.findMany()
+    * ```
+    */
+  get access_secret(): Prisma.access_secretDelegate<ExtArgs, ClientOptions>;
+
+  /**
    * `prisma.live_stream_favourites`: Exposes CRUD operations for the **live_stream_favourites** model.
     * Example usage:
     * ```ts
@@ -939,6 +954,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
+    access_secret: 'access_secret',
     live_stream_favourites: 'live_stream_favourites',
     office_streams: 'office_streams',
     offices: 'offices',
@@ -978,10 +994,76 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "live_stream_favourites" | "office_streams" | "offices" | "offices_attendance" | "offices_cameras" | "offices_sentiment_analysis" | "park_cameras" | "park_streams" | "park_zones" | "parks" | "parks_attendance" | "parks_behaviour_alerts" | "parks_intrusion_detection" | "parks_irrigation_job_history" | "parks_landscaping" | "parks_litter_detection" | "parks_sentiment_analysis" | "parks_smoking_detection" | "users" | "users_permissions" | "users_roles"
+      modelProps: "access_secret" | "live_stream_favourites" | "office_streams" | "offices" | "offices_attendance" | "offices_cameras" | "offices_sentiment_analysis" | "park_cameras" | "park_streams" | "park_zones" | "parks" | "parks_attendance" | "parks_behaviour_alerts" | "parks_intrusion_detection" | "parks_irrigation_job_history" | "parks_landscaping" | "parks_litter_detection" | "parks_sentiment_analysis" | "parks_smoking_detection" | "users" | "users_permissions" | "users_roles"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
+      access_secret: {
+        payload: Prisma.$access_secretPayload<ExtArgs>
+        fields: Prisma.access_secretFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.access_secretFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.access_secretFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>
+          }
+          findFirst: {
+            args: Prisma.access_secretFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.access_secretFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>
+          }
+          findMany: {
+            args: Prisma.access_secretFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>[]
+          }
+          create: {
+            args: Prisma.access_secretCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>
+          }
+          createMany: {
+            args: Prisma.access_secretCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.access_secretDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>
+          }
+          update: {
+            args: Prisma.access_secretUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>
+          }
+          deleteMany: {
+            args: Prisma.access_secretDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.access_secretUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.access_secretUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$access_secretPayload>
+          }
+          aggregate: {
+            args: Prisma.Access_secretAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAccess_secret>
+          }
+          groupBy: {
+            args: Prisma.access_secretGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Access_secretGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.access_secretCountArgs<ExtArgs>
+            result: $Utils.Optional<Access_secretCountAggregateOutputType> | number
+          }
+        }
+      }
       live_stream_favourites: {
         payload: Prisma.$live_stream_favouritesPayload<ExtArgs>
         fields: Prisma.live_stream_favouritesFieldRefs
@@ -2460,6 +2542,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
+    access_secret?: access_secretOmit
     live_stream_favourites?: live_stream_favouritesOmit
     office_streams?: office_streamsOmit
     offices?: officesOmit
@@ -2965,6 +3048,889 @@ export namespace Prisma {
   /**
    * Models
    */
+
+  /**
+   * Model access_secret
+   */
+
+  export type AggregateAccess_secret = {
+    _count: Access_secretCountAggregateOutputType | null
+    _avg: Access_secretAvgAggregateOutputType | null
+    _sum: Access_secretSumAggregateOutputType | null
+    _min: Access_secretMinAggregateOutputType | null
+    _max: Access_secretMaxAggregateOutputType | null
+  }
+
+  export type Access_secretAvgAggregateOutputType = {
+    Id: number | null
+  }
+
+  export type Access_secretSumAggregateOutputType = {
+    Id: number | null
+  }
+
+  export type Access_secretMinAggregateOutputType = {
+    Id: number | null
+    value: string | null
+  }
+
+  export type Access_secretMaxAggregateOutputType = {
+    Id: number | null
+    value: string | null
+  }
+
+  export type Access_secretCountAggregateOutputType = {
+    Id: number
+    value: number
+    _all: number
+  }
+
+
+  export type Access_secretAvgAggregateInputType = {
+    Id?: true
+  }
+
+  export type Access_secretSumAggregateInputType = {
+    Id?: true
+  }
+
+  export type Access_secretMinAggregateInputType = {
+    Id?: true
+    value?: true
+  }
+
+  export type Access_secretMaxAggregateInputType = {
+    Id?: true
+    value?: true
+  }
+
+  export type Access_secretCountAggregateInputType = {
+    Id?: true
+    value?: true
+    _all?: true
+  }
+
+  export type Access_secretAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which access_secret to aggregate.
+     */
+    where?: access_secretWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of access_secrets to fetch.
+     */
+    orderBy?: access_secretOrderByWithRelationInput | access_secretOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: access_secretWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` access_secrets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` access_secrets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned access_secrets
+    **/
+    _count?: true | Access_secretCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Access_secretAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Access_secretSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Access_secretMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Access_secretMaxAggregateInputType
+  }
+
+  export type GetAccess_secretAggregateType<T extends Access_secretAggregateArgs> = {
+        [P in keyof T & keyof AggregateAccess_secret]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAccess_secret[P]>
+      : GetScalarType<T[P], AggregateAccess_secret[P]>
+  }
+
+
+
+
+  export type access_secretGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: access_secretWhereInput
+    orderBy?: access_secretOrderByWithAggregationInput | access_secretOrderByWithAggregationInput[]
+    by: Access_secretScalarFieldEnum[] | Access_secretScalarFieldEnum
+    having?: access_secretScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Access_secretCountAggregateInputType | true
+    _avg?: Access_secretAvgAggregateInputType
+    _sum?: Access_secretSumAggregateInputType
+    _min?: Access_secretMinAggregateInputType
+    _max?: Access_secretMaxAggregateInputType
+  }
+
+  export type Access_secretGroupByOutputType = {
+    Id: number
+    value: string | null
+    _count: Access_secretCountAggregateOutputType | null
+    _avg: Access_secretAvgAggregateOutputType | null
+    _sum: Access_secretSumAggregateOutputType | null
+    _min: Access_secretMinAggregateOutputType | null
+    _max: Access_secretMaxAggregateOutputType | null
+  }
+
+  type GetAccess_secretGroupByPayload<T extends access_secretGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Access_secretGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Access_secretGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Access_secretGroupByOutputType[P]>
+            : GetScalarType<T[P], Access_secretGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type access_secretSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    Id?: boolean
+    value?: boolean
+  }, ExtArgs["result"]["access_secret"]>
+
+
+
+  export type access_secretSelectScalar = {
+    Id?: boolean
+    value?: boolean
+  }
+
+  export type access_secretOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Id" | "value", ExtArgs["result"]["access_secret"]>
+
+  export type $access_secretPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "access_secret"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      Id: number
+      value: string | null
+    }, ExtArgs["result"]["access_secret"]>
+    composites: {}
+  }
+
+  type access_secretGetPayload<S extends boolean | null | undefined | access_secretDefaultArgs> = $Result.GetResult<Prisma.$access_secretPayload, S>
+
+  type access_secretCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<access_secretFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Access_secretCountAggregateInputType | true
+    }
+
+  export interface access_secretDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['access_secret'], meta: { name: 'access_secret' } }
+    /**
+     * Find zero or one Access_secret that matches the filter.
+     * @param {access_secretFindUniqueArgs} args - Arguments to find a Access_secret
+     * @example
+     * // Get one Access_secret
+     * const access_secret = await prisma.access_secret.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends access_secretFindUniqueArgs>(args: SelectSubset<T, access_secretFindUniqueArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Access_secret that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {access_secretFindUniqueOrThrowArgs} args - Arguments to find a Access_secret
+     * @example
+     * // Get one Access_secret
+     * const access_secret = await prisma.access_secret.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends access_secretFindUniqueOrThrowArgs>(args: SelectSubset<T, access_secretFindUniqueOrThrowArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Access_secret that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {access_secretFindFirstArgs} args - Arguments to find a Access_secret
+     * @example
+     * // Get one Access_secret
+     * const access_secret = await prisma.access_secret.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends access_secretFindFirstArgs>(args?: SelectSubset<T, access_secretFindFirstArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Access_secret that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {access_secretFindFirstOrThrowArgs} args - Arguments to find a Access_secret
+     * @example
+     * // Get one Access_secret
+     * const access_secret = await prisma.access_secret.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends access_secretFindFirstOrThrowArgs>(args?: SelectSubset<T, access_secretFindFirstOrThrowArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Access_secrets that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {access_secretFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Access_secrets
+     * const access_secrets = await prisma.access_secret.findMany()
+     * 
+     * // Get first 10 Access_secrets
+     * const access_secrets = await prisma.access_secret.findMany({ take: 10 })
+     * 
+     * // Only select the `Id`
+     * const access_secretWithIdOnly = await prisma.access_secret.findMany({ select: { Id: true } })
+     * 
+     */
+    findMany<T extends access_secretFindManyArgs>(args?: SelectSubset<T, access_secretFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Access_secret.
+     * @param {access_secretCreateArgs} args - Arguments to create a Access_secret.
+     * @example
+     * // Create one Access_secret
+     * const Access_secret = await prisma.access_secret.create({
+     *   data: {
+     *     // ... data to create a Access_secret
+     *   }
+     * })
+     * 
+     */
+    create<T extends access_secretCreateArgs>(args: SelectSubset<T, access_secretCreateArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Access_secrets.
+     * @param {access_secretCreateManyArgs} args - Arguments to create many Access_secrets.
+     * @example
+     * // Create many Access_secrets
+     * const access_secret = await prisma.access_secret.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends access_secretCreateManyArgs>(args?: SelectSubset<T, access_secretCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Access_secret.
+     * @param {access_secretDeleteArgs} args - Arguments to delete one Access_secret.
+     * @example
+     * // Delete one Access_secret
+     * const Access_secret = await prisma.access_secret.delete({
+     *   where: {
+     *     // ... filter to delete one Access_secret
+     *   }
+     * })
+     * 
+     */
+    delete<T extends access_secretDeleteArgs>(args: SelectSubset<T, access_secretDeleteArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Access_secret.
+     * @param {access_secretUpdateArgs} args - Arguments to update one Access_secret.
+     * @example
+     * // Update one Access_secret
+     * const access_secret = await prisma.access_secret.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends access_secretUpdateArgs>(args: SelectSubset<T, access_secretUpdateArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Access_secrets.
+     * @param {access_secretDeleteManyArgs} args - Arguments to filter Access_secrets to delete.
+     * @example
+     * // Delete a few Access_secrets
+     * const { count } = await prisma.access_secret.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends access_secretDeleteManyArgs>(args?: SelectSubset<T, access_secretDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Access_secrets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {access_secretUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Access_secrets
+     * const access_secret = await prisma.access_secret.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends access_secretUpdateManyArgs>(args: SelectSubset<T, access_secretUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Access_secret.
+     * @param {access_secretUpsertArgs} args - Arguments to update or create a Access_secret.
+     * @example
+     * // Update or create a Access_secret
+     * const access_secret = await prisma.access_secret.upsert({
+     *   create: {
+     *     // ... data to create a Access_secret
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Access_secret we want to update
+     *   }
+     * })
+     */
+    upsert<T extends access_secretUpsertArgs>(args: SelectSubset<T, access_secretUpsertArgs<ExtArgs>>): Prisma__access_secretClient<$Result.GetResult<Prisma.$access_secretPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Access_secrets.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {access_secretCountArgs} args - Arguments to filter Access_secrets to count.
+     * @example
+     * // Count the number of Access_secrets
+     * const count = await prisma.access_secret.count({
+     *   where: {
+     *     // ... the filter for the Access_secrets we want to count
+     *   }
+     * })
+    **/
+    count<T extends access_secretCountArgs>(
+      args?: Subset<T, access_secretCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Access_secretCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Access_secret.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Access_secretAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Access_secretAggregateArgs>(args: Subset<T, Access_secretAggregateArgs>): Prisma.PrismaPromise<GetAccess_secretAggregateType<T>>
+
+    /**
+     * Group by Access_secret.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {access_secretGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends access_secretGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: access_secretGroupByArgs['orderBy'] }
+        : { orderBy?: access_secretGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, access_secretGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAccess_secretGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the access_secret model
+   */
+  readonly fields: access_secretFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for access_secret.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__access_secretClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the access_secret model
+   */
+  interface access_secretFieldRefs {
+    readonly Id: FieldRef<"access_secret", 'Int'>
+    readonly value: FieldRef<"access_secret", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * access_secret findUnique
+   */
+  export type access_secretFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * Filter, which access_secret to fetch.
+     */
+    where: access_secretWhereUniqueInput
+  }
+
+  /**
+   * access_secret findUniqueOrThrow
+   */
+  export type access_secretFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * Filter, which access_secret to fetch.
+     */
+    where: access_secretWhereUniqueInput
+  }
+
+  /**
+   * access_secret findFirst
+   */
+  export type access_secretFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * Filter, which access_secret to fetch.
+     */
+    where?: access_secretWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of access_secrets to fetch.
+     */
+    orderBy?: access_secretOrderByWithRelationInput | access_secretOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for access_secrets.
+     */
+    cursor?: access_secretWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` access_secrets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` access_secrets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of access_secrets.
+     */
+    distinct?: Access_secretScalarFieldEnum | Access_secretScalarFieldEnum[]
+  }
+
+  /**
+   * access_secret findFirstOrThrow
+   */
+  export type access_secretFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * Filter, which access_secret to fetch.
+     */
+    where?: access_secretWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of access_secrets to fetch.
+     */
+    orderBy?: access_secretOrderByWithRelationInput | access_secretOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for access_secrets.
+     */
+    cursor?: access_secretWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` access_secrets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` access_secrets.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of access_secrets.
+     */
+    distinct?: Access_secretScalarFieldEnum | Access_secretScalarFieldEnum[]
+  }
+
+  /**
+   * access_secret findMany
+   */
+  export type access_secretFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * Filter, which access_secrets to fetch.
+     */
+    where?: access_secretWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of access_secrets to fetch.
+     */
+    orderBy?: access_secretOrderByWithRelationInput | access_secretOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing access_secrets.
+     */
+    cursor?: access_secretWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` access_secrets from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` access_secrets.
+     */
+    skip?: number
+    distinct?: Access_secretScalarFieldEnum | Access_secretScalarFieldEnum[]
+  }
+
+  /**
+   * access_secret create
+   */
+  export type access_secretCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * The data needed to create a access_secret.
+     */
+    data?: XOR<access_secretCreateInput, access_secretUncheckedCreateInput>
+  }
+
+  /**
+   * access_secret createMany
+   */
+  export type access_secretCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many access_secrets.
+     */
+    data: access_secretCreateManyInput | access_secretCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * access_secret update
+   */
+  export type access_secretUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * The data needed to update a access_secret.
+     */
+    data: XOR<access_secretUpdateInput, access_secretUncheckedUpdateInput>
+    /**
+     * Choose, which access_secret to update.
+     */
+    where: access_secretWhereUniqueInput
+  }
+
+  /**
+   * access_secret updateMany
+   */
+  export type access_secretUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update access_secrets.
+     */
+    data: XOR<access_secretUpdateManyMutationInput, access_secretUncheckedUpdateManyInput>
+    /**
+     * Filter which access_secrets to update
+     */
+    where?: access_secretWhereInput
+    /**
+     * Limit how many access_secrets to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * access_secret upsert
+   */
+  export type access_secretUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * The filter to search for the access_secret to update in case it exists.
+     */
+    where: access_secretWhereUniqueInput
+    /**
+     * In case the access_secret found by the `where` argument doesn't exist, create a new access_secret with this data.
+     */
+    create: XOR<access_secretCreateInput, access_secretUncheckedCreateInput>
+    /**
+     * In case the access_secret was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<access_secretUpdateInput, access_secretUncheckedUpdateInput>
+  }
+
+  /**
+   * access_secret delete
+   */
+  export type access_secretDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+    /**
+     * Filter which access_secret to delete.
+     */
+    where: access_secretWhereUniqueInput
+  }
+
+  /**
+   * access_secret deleteMany
+   */
+  export type access_secretDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which access_secrets to delete
+     */
+    where?: access_secretWhereInput
+    /**
+     * Limit how many access_secrets to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * access_secret without action
+   */
+  export type access_secretDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the access_secret
+     */
+    select?: access_secretSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the access_secret
+     */
+    omit?: access_secretOmit<ExtArgs> | null
+  }
+
 
   /**
    * Model live_stream_favourites
@@ -17615,7 +18581,7 @@ export namespace Prisma {
     zone_Id: number | null
     job_Id: string | null
     job_started_at: Date
-    job_completed_at: Date
+    job_completed_at: Date | null
     job_status: string | null
     createdAt: Date | null
     updatedAt: Date
@@ -17686,7 +18652,7 @@ export namespace Prisma {
       zone_Id: number | null
       job_Id: string | null
       job_started_at: Date
-      job_completed_at: Date
+      job_completed_at: Date | null
       job_status: string | null
       createdAt: Date | null
       updatedAt: Date
@@ -26462,6 +27428,14 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+  export const Access_secretScalarFieldEnum: {
+    Id: 'Id',
+    value: 'value'
+  };
+
+  export type Access_secretScalarFieldEnum = (typeof Access_secretScalarFieldEnum)[keyof typeof Access_secretScalarFieldEnum]
+
+
   export const Live_stream_favouritesScalarFieldEnum: {
     Id: 'Id',
     emp_Id: 'emp_Id',
@@ -26868,6 +27842,13 @@ export namespace Prisma {
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
+  export const access_secretOrderByRelevanceFieldEnum: {
+    value: 'value'
+  };
+
+  export type access_secretOrderByRelevanceFieldEnum = (typeof access_secretOrderByRelevanceFieldEnum)[keyof typeof access_secretOrderByRelevanceFieldEnum]
+
+
   export const office_streamsOrderByRelevanceFieldEnum: {
     stream_url: 'stream_url',
     stream_api_key: 'stream_api_key',
@@ -27073,16 +28054,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'DateTime'
+   * Reference to a field of type 'String'
    */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
     
 
 
   /**
-   * Reference to a field of type 'String'
+   * Reference to a field of type 'DateTime'
    */
-  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
     
 
 
@@ -27137,6 +28118,46 @@ export namespace Prisma {
    * Deep Input Types
    */
 
+
+  export type access_secretWhereInput = {
+    AND?: access_secretWhereInput | access_secretWhereInput[]
+    OR?: access_secretWhereInput[]
+    NOT?: access_secretWhereInput | access_secretWhereInput[]
+    Id?: IntFilter<"access_secret"> | number
+    value?: StringNullableFilter<"access_secret"> | string | null
+  }
+
+  export type access_secretOrderByWithRelationInput = {
+    Id?: SortOrder
+    value?: SortOrderInput | SortOrder
+    _relevance?: access_secretOrderByRelevanceInput
+  }
+
+  export type access_secretWhereUniqueInput = Prisma.AtLeast<{
+    Id?: number
+    AND?: access_secretWhereInput | access_secretWhereInput[]
+    OR?: access_secretWhereInput[]
+    NOT?: access_secretWhereInput | access_secretWhereInput[]
+    value?: StringNullableFilter<"access_secret"> | string | null
+  }, "Id">
+
+  export type access_secretOrderByWithAggregationInput = {
+    Id?: SortOrder
+    value?: SortOrderInput | SortOrder
+    _count?: access_secretCountOrderByAggregateInput
+    _avg?: access_secretAvgOrderByAggregateInput
+    _max?: access_secretMaxOrderByAggregateInput
+    _min?: access_secretMinOrderByAggregateInput
+    _sum?: access_secretSumOrderByAggregateInput
+  }
+
+  export type access_secretScalarWhereWithAggregatesInput = {
+    AND?: access_secretScalarWhereWithAggregatesInput | access_secretScalarWhereWithAggregatesInput[]
+    OR?: access_secretScalarWhereWithAggregatesInput[]
+    NOT?: access_secretScalarWhereWithAggregatesInput | access_secretScalarWhereWithAggregatesInput[]
+    Id?: IntWithAggregatesFilter<"access_secret"> | number
+    value?: StringNullableWithAggregatesFilter<"access_secret"> | string | null
+  }
 
   export type live_stream_favouritesWhereInput = {
     AND?: live_stream_favouritesWhereInput | live_stream_favouritesWhereInput[]
@@ -28337,7 +29358,7 @@ export namespace Prisma {
     zone_Id?: IntNullableFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
@@ -28351,7 +29372,7 @@ export namespace Prisma {
     zone_Id?: SortOrderInput | SortOrder
     job_Id?: SortOrderInput | SortOrder
     job_started_at?: SortOrder
-    job_completed_at?: SortOrder
+    job_completed_at?: SortOrderInput | SortOrder
     job_status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
@@ -28369,7 +29390,7 @@ export namespace Prisma {
     zone_Id?: IntNullableFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
@@ -28383,7 +29404,7 @@ export namespace Prisma {
     zone_Id?: SortOrderInput | SortOrder
     job_Id?: SortOrderInput | SortOrder
     job_started_at?: SortOrder
-    job_completed_at?: SortOrder
+    job_completed_at?: SortOrderInput | SortOrder
     job_status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
@@ -28403,7 +29424,7 @@ export namespace Prisma {
     zone_Id?: IntNullableWithAggregatesFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableWithAggregatesFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableWithAggregatesFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string
@@ -29252,6 +30273,38 @@ export namespace Prisma {
     role_name?: StringNullableWithAggregatesFilter<"users_roles"> | string | null
     createdAt?: DateTimeNullableWithAggregatesFilter<"users_roles"> | Date | string | null
     updatedAt?: DateTimeWithAggregatesFilter<"users_roles"> | Date | string
+  }
+
+  export type access_secretCreateInput = {
+    value?: string | null
+  }
+
+  export type access_secretUncheckedCreateInput = {
+    Id?: number
+    value?: string | null
+  }
+
+  export type access_secretUpdateInput = {
+    value?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type access_secretUncheckedUpdateInput = {
+    Id?: IntFieldUpdateOperationsInput | number
+    value?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type access_secretCreateManyInput = {
+    Id?: number
+    value?: string | null
+  }
+
+  export type access_secretUpdateManyMutationInput = {
+    value?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type access_secretUncheckedUpdateManyInput = {
+    Id?: IntFieldUpdateOperationsInput | number
+    value?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type live_stream_favouritesCreateInput = {
@@ -30519,7 +31572,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyCreateInput = {
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -30533,7 +31586,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -30542,7 +31595,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -30556,7 +31609,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -30568,7 +31621,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -30577,7 +31630,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateManyMutationInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -30589,7 +31642,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31575,6 +32628,89 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type access_secretOrderByRelevanceInput = {
+    fields: access_secretOrderByRelevanceFieldEnum | access_secretOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type access_secretCountOrderByAggregateInput = {
+    Id?: SortOrder
+    value?: SortOrder
+  }
+
+  export type access_secretAvgOrderByAggregateInput = {
+    Id?: SortOrder
+  }
+
+  export type access_secretMaxOrderByAggregateInput = {
+    Id?: SortOrder
+    value?: SortOrder
+  }
+
+  export type access_secretMinOrderByAggregateInput = {
+    Id?: SortOrder
+    value?: SortOrder
+  }
+
+  export type access_secretSumOrderByAggregateInput = {
+    Id?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type IntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | null
@@ -31623,11 +32759,6 @@ export namespace Prisma {
     isNot?: offices_camerasWhereInput | null
   }
 
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
   export type live_stream_favouritesCountOrderByAggregateInput = {
     Id?: SortOrder
     emp_Id?: SortOrder
@@ -31667,22 +32798,6 @@ export namespace Prisma {
     emp_Id?: SortOrder
     park_camera_Id?: SortOrder
     office_camera_Id?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -31727,21 +32842,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type OfficesNullableScalarRelationFilter = {
@@ -31796,24 +32896,6 @@ export namespace Prisma {
   export type office_streamsSumOrderByAggregateInput = {
     Id?: SortOrder
     office_Id?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type DecimalNullableFilter<$PrismaModel = never> = {
@@ -33368,6 +34450,18 @@ export namespace Prisma {
     Id?: SortOrder
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type usersCreateNestedOneWithoutLive_stream_favouritesInput = {
     create?: XOR<usersCreateWithoutLive_stream_favouritesInput, usersUncheckedCreateWithoutLive_stream_favouritesInput>
     connectOrCreate?: usersCreateOrConnectWithoutLive_stream_favouritesInput
@@ -33424,14 +34518,6 @@ export namespace Prisma {
     update?: XOR<XOR<offices_camerasUpdateToOneWithWhereWithoutLive_stream_favouritesInput, offices_camerasUpdateWithoutLive_stream_favouritesInput>, offices_camerasUncheckedUpdateWithoutLive_stream_favouritesInput>
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type NullableIntFieldUpdateOperationsInput = {
     set?: number | null
     increment?: number
@@ -33444,10 +34530,6 @@ export namespace Prisma {
     create?: XOR<officesCreateWithoutOffice_streamsInput, officesUncheckedCreateWithoutOffice_streamsInput>
     connectOrCreate?: officesCreateOrConnectWithoutOffice_streamsInput
     connect?: officesWhereUniqueInput
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
   }
 
   export type officesUpdateOneWithoutOffice_streamsNestedInput = {
@@ -35059,6 +36141,66 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    search?: string
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type NestedIntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | null
@@ -35090,33 +36232,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -35172,39 +36287,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    search?: string
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type NestedDecimalNullableFilter<$PrismaModel = never> = {
@@ -37156,7 +38238,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyCreateWithoutPark_zonesInput = {
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -37168,7 +38250,7 @@ export namespace Prisma {
     park_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -37263,7 +38345,7 @@ export namespace Prisma {
     zone_Id?: IntNullableFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
@@ -37492,7 +38574,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyCreateWithoutParksInput = {
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -37504,7 +38586,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -40419,7 +41501,7 @@ export namespace Prisma {
     park_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -40428,7 +41510,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateWithoutPark_zonesInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40440,7 +41522,7 @@ export namespace Prisma {
     park_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40451,7 +41533,7 @@ export namespace Prisma {
     park_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40538,7 +41620,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -40835,7 +41917,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateWithoutParksInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40847,7 +41929,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40858,7 +41940,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
