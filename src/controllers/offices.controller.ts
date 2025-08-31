@@ -56,16 +56,11 @@ class OfficesController extends OfficesService {
   public static changeOfficeCameraFunctionality = async (req: Request, res: Response, next: NextFunction) => {
     try {
    const { camera_Id, ...fields } = req.body;
+     console.log('body -> ', req.body)
     const updatableFields = [
       "attendance",
       "footfall",
-      "behaviour",
-      "behaviour",
-      "irrigation",
-      "landscapping",
-      "litter_detection",
-      "intrusion",
-      "smooking_detection",
+      "sentiment",
     ];
      if (!camera_Id) {
       return res.status(STATUS.BAD_REQUEST).json({ message: "camera_Id is required" });
@@ -77,6 +72,7 @@ class OfficesController extends OfficesService {
     );
 
     // Ensure only one field is present
+    console.log('fields -> ', fieldsToUpdate)
     if (fieldsToUpdate.length !== 1) {
       return res.status(STATUS.BAD_REQUEST).json({
         message: "You must provide exactly one field to update",
@@ -112,6 +108,34 @@ class OfficesController extends OfficesService {
       } else {
         return res.status(STATUS.BAD_REQUEST).json({errors: errors.array()})
       }
+    } catch (error) {
+      next(error)
+    }
+  }
+  // get office details
+  public static getOffice = async (req: Request, res: Response, next: NextFunction) => {
+    const officeId: string = req.params.office_Id;
+    try {
+      const office = await OfficesService.getOfficeService(officeId);
+      return res.status(STATUS.SUCCESS).json(office)
+    } catch (error) {
+      next(error)
+    }
+  }
+    public static getOfficeSetting = async (req: Request, res: Response, next: NextFunction) => {
+    const officeId: number = Number(req.params.officeId);
+    try {
+      const setting = await OfficesService.getOfficeSettingService(officeId);
+      return res.status(STATUS.SUCCESS).json(setting)
+    } catch (error) {
+      next(error)
+    }
+  }
+    public static getOfficeCamerasFunctionalities = async (req: Request, res: Response, next: NextFunction) => {
+    const officeId: number = Number(req.params.officeId)
+    try {
+      const functionalities = await OfficesService.getOfficeCamerasFunctionalitiesService(officeId);
+      return res.status(STATUS.SUCCESS).json(functionalities)
     } catch (error) {
       next(error)
     }

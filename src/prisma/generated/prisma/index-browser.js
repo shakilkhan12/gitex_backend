@@ -181,7 +181,10 @@ exports.Prisma.Offices_camerasScalarFieldEnum = {
   last_active_time: 'last_active_time',
   status: 'status',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  attendance: 'attendance',
+  footfall: 'footfall',
+  sentiment: 'sentiment'
 };
 
 exports.Prisma.Offices_sentiment_analysisScalarFieldEnum = {

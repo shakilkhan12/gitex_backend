@@ -85,12 +85,12 @@ const { camera_Id, ...fields } = req.body;
       "attendance",
       "footfall",
       "behaviour",
-      "behaviour",
+      "sentiment",
       "irrigation",
-      "landscapping",
+      "landscaping",
       "litter_detection",
       "intrusion",
-      "smooking_detection",
+      "smoking_detection",
     ];
      if (!camera_Id) {
       return res.status(STATUS.BAD_REQUEST).json({ message: "camera_Id is required" });
@@ -100,7 +100,7 @@ const { camera_Id, ...fields } = req.body;
     const fieldsToUpdate = Object.keys(fields).filter((f) =>
       updatableFields.includes(f)
     );
-
+    console.log(fieldsToUpdate)
     // Ensure only one field is present
     if (fieldsToUpdate.length !== 1) {
       return res.status(STATUS.BAD_REQUEST).json({
@@ -137,6 +137,33 @@ const { camera_Id, ...fields } = req.body;
       } else {
         return res.status(STATUS.BAD_REQUEST).json({errors: errors.array()})
       }
+    } catch (error) {
+      next(error)
+    }
+  }
+  public static getPark = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const park_Id: string = req.params.parkId;
+      const park = await ParkService.getParkService(park_Id);
+      return res.status(STATUS.SUCCESS).json(park)
+    } catch (error) {
+      next(error)
+    }
+  }
+    public static getParkCamerasFunctionalities = async (req: Request, res: Response, next: NextFunction) => {
+    const parkId: number = Number(req.params.parkId)
+    try {
+      const functionalities = await ParkService.getParkCamerasFunctionalitiesService(parkId);
+      return res.status(STATUS.SUCCESS).json(functionalities)
+    } catch (error) {
+      next(error)
+    }
+  }
+  public static getParkSetting = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const parkId: number = Number(req.params.parkId)
+      const settings = await ParkService.getParkSettingService(parkId)
+      return res.status(STATUS.SUCCESS).json(settings)
     } catch (error) {
       next(error)
     }

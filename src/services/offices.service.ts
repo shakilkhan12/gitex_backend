@@ -66,16 +66,25 @@ class OfficesService {
     return result;
    }
    protected static changeOfficeSettingService = async (setting: OfficeSettingInputTypes) => {
-      const {password, stream_api_key, stream_path, stream_url} = setting;
-      const result = db.office_streams.update({
-        where: { office_Id: Number(setting.office_Id) },
-        data: {
-        password,
-        stream_api_key,
-        stream_path,
-        stream_url
-      },
-    });
+    const { password, stream_api_key, stream_path, stream_url, office_Id } = setting;
+
+const result = await db.office_streams.upsert({
+  where: { office_Id: Number(office_Id) }, // must be a unique field
+  update: {
+    password,
+    stream_api_key,
+    stream_path,
+    stream_url
+  },
+  create: {
+    office_Id: Number(office_Id),
+    password,
+    stream_api_key,
+    stream_path,
+    stream_url
+  }
+});
+
     return result;
    }
    protected static updateOfficeBasicInfoService = async (basicInfo: OfficeType) => {
@@ -84,7 +93,7 @@ class OfficesService {
                where: { office_Id: office_Id },
            });
            if(!parkExist) {
-              throw new HttpException(STATUS.BAD_REQUEST, `No office found with the given ID`);
+              throw new HttpException(STATUS.NOT_FOUND, `No office found with the given ID`);
            }
        const result = db.offices.update({
         where: { office_Id: String(office_Id) },
@@ -96,6 +105,46 @@ class OfficesService {
       },
     });
     return result;
+   }
+   protected static getOfficeService = async (office_Id: string) => {
+      if(!office_Id) {
+         throw new HttpException(STATUS.BAD_REQUEST, `Office id is required`);
+      }
+       const office = await db.offices.findFirst({
+               where: { office_Id:  office_Id},
+           });
+           if(office) {
+             return office;
+           } else {
+            throw new HttpException(STATUS.NOT_FOUND, `No office found with the given ID`);
+           }
+   }
+   // get office setting
+      protected static getOfficeSettingService = async (office_Id: number) => {
+      if(!office_Id) {
+         throw new HttpException(STATUS.BAD_REQUEST, `Office id is required`);
+      }
+       const office = await db.office_streams.findFirst({
+               where: { office_Id:  Number(office_Id)},
+           });
+           if(office) {
+             return office;
+           } else {
+            throw new HttpException(STATUS.NOT_FOUND, `No office stream found with the given ID`);
+           }
+   }
+      protected static getOfficeCamerasFunctionalitiesService = async (office_Id: number) => {
+      if(!office_Id) {
+         throw new HttpException(STATUS.BAD_REQUEST, `Office id is required`);
+      }
+       const functionalities = await db.offices_cameras.findMany({
+               where: { office_Id:  office_Id},
+           });
+           if(functionalities) {
+             return functionalities;
+           } else {
+            throw new HttpException(STATUS.NOT_FOUND, `No functionalities found with the given ID`);
+           }
    }
    
 }

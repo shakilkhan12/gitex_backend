@@ -32,6 +32,17 @@ class ParkService {
   },
       });
    }
+   // get park
+   protected static getParkService = async (park_Id: string) => {
+      if(!park_Id) {
+         throw new HttpException(STATUS.BAD_REQUEST, `park id is required`)
+      }
+      return await db.parks.findFirst({
+         where: {
+         park_Id: park_Id
+    },
+      });
+   }
    // get park zones service
    protected static getParkZonesService = async (park_Id: number) => {
       if(!park_Id) {
@@ -104,21 +115,29 @@ class ParkService {
    }
    protected static changeParkSettingService = async (setting: SettingInputTypes) => {
       const {password, stream_api_key, stream_path, stream_url, park_Id} = setting;
-      const parkExist = await db.park_streams.findFirst({
-               where: { park_Id: Number(park_Id) },
+      const parkExist = await db.parks.findFirst({
+               where: { park_Id: String(park_Id) },
            });
            if(!parkExist) {
-              throw new HttpException(STATUS.BAD_REQUEST, `No park stream found with the given ID`);
+              throw new HttpException(STATUS.NOT_FOUND, `No park found with the given ID`);
            }
-      const result = db.park_streams.update({
-        where: { park_Id: Number(setting.park_Id) },
-        data: {
-        password,
-        stream_api_key,
-        stream_path,
-        stream_url,
-      },
-    });
+   const result = await db.park_streams.upsert({
+  where: { park_Id: Number(park_Id) }, // must be a unique field
+  update: {
+    password,
+    stream_api_key,
+    stream_path,
+    stream_url
+  },
+  create: {
+    park_Id: Number(park_Id),
+    password,
+    stream_api_key,
+    stream_path,
+    stream_url,
+    createdAt: new Date()
+  }
+});
     return result;
    }
    // update park basic info service
@@ -140,6 +159,33 @@ class ParkService {
       },
     });
     return result;
+   }
+      protected static getParkCamerasFunctionalitiesService = async (park_Id: number) => {
+      if(!park_Id) {
+         throw new HttpException(STATUS.BAD_REQUEST, `Park id is required`);
+      }
+       const functionalities = await db.park_cameras.findMany({
+               where: { park_Id:  park_Id},
+           });
+           
+           if(functionalities) {
+             return functionalities;
+           } else {
+            throw new HttpException(STATUS.NOT_FOUND, `No functionalities found with the given ID`);
+           }
+   }
+   protected static getParkSettingService = async (parkId: number) => {
+      if(!parkId) {
+          throw new HttpException(STATUS.BAD_REQUEST, `Park id is required`);
+      }
+      const settings = await db.park_streams.findFirst({
+         where: {park_Id: parkId}
+      })
+      if(settings) {
+         return settings
+      } else {
+         throw new HttpException(STATUS.NOT_FOUND, `No Settings found with the given ID`);
+      }
    }
    
 }

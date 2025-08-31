@@ -7275,6 +7275,9 @@ export namespace Prisma {
     status: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    attendance: boolean | null
+    footfall: boolean | null
+    sentiment: boolean | null
   }
 
   export type Offices_camerasMaxAggregateOutputType = {
@@ -7291,6 +7294,9 @@ export namespace Prisma {
     status: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    attendance: boolean | null
+    footfall: boolean | null
+    sentiment: boolean | null
   }
 
   export type Offices_camerasCountAggregateOutputType = {
@@ -7307,6 +7313,9 @@ export namespace Prisma {
     status: number
     createdAt: number
     updatedAt: number
+    attendance: number
+    footfall: number
+    sentiment: number
     _all: number
   }
 
@@ -7339,6 +7348,9 @@ export namespace Prisma {
     status?: true
     createdAt?: true
     updatedAt?: true
+    attendance?: true
+    footfall?: true
+    sentiment?: true
   }
 
   export type Offices_camerasMaxAggregateInputType = {
@@ -7355,6 +7367,9 @@ export namespace Prisma {
     status?: true
     createdAt?: true
     updatedAt?: true
+    attendance?: true
+    footfall?: true
+    sentiment?: true
   }
 
   export type Offices_camerasCountAggregateInputType = {
@@ -7371,6 +7386,9 @@ export namespace Prisma {
     status?: true
     createdAt?: true
     updatedAt?: true
+    attendance?: true
+    footfall?: true
+    sentiment?: true
     _all?: true
   }
 
@@ -7474,6 +7492,9 @@ export namespace Prisma {
     status: string | null
     createdAt: Date | null
     updatedAt: Date
+    attendance: boolean
+    footfall: boolean
+    sentiment: boolean
     _count: Offices_camerasCountAggregateOutputType | null
     _avg: Offices_camerasAvgAggregateOutputType | null
     _sum: Offices_camerasSumAggregateOutputType | null
@@ -7509,6 +7530,9 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: boolean | offices_cameras$live_stream_favouritesArgs<ExtArgs>
     offices?: boolean | offices_cameras$officesArgs<ExtArgs>
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: boolean | offices_cameras$offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_camerasArgs<ExtArgs>
@@ -7532,9 +7556,12 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
   }
 
-  export type offices_camerasOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Id" | "office_Id" | "camera_Id" | "camera_english_name" | "camera_arabic_name" | "latitude" | "longitude" | "ip_address" | "last_active_date" | "last_active_time" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["offices_cameras"]>
+  export type offices_camerasOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"Id" | "office_Id" | "camera_Id" | "camera_english_name" | "camera_arabic_name" | "latitude" | "longitude" | "ip_address" | "last_active_date" | "last_active_time" | "status" | "createdAt" | "updatedAt" | "attendance" | "footfall" | "sentiment", ExtArgs["result"]["offices_cameras"]>
   export type offices_camerasInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     live_stream_favourites?: boolean | offices_cameras$live_stream_favouritesArgs<ExtArgs>
     offices?: boolean | offices_cameras$officesArgs<ExtArgs>
@@ -7565,6 +7592,9 @@ export namespace Prisma {
       status: string | null
       createdAt: Date | null
       updatedAt: Date
+      attendance: boolean
+      footfall: boolean
+      sentiment: boolean
     }, ExtArgs["result"]["offices_cameras"]>
     composites: {}
   }
@@ -7951,6 +7981,9 @@ export namespace Prisma {
     readonly status: FieldRef<"offices_cameras", 'String'>
     readonly createdAt: FieldRef<"offices_cameras", 'DateTime'>
     readonly updatedAt: FieldRef<"offices_cameras", 'DateTime'>
+    readonly attendance: FieldRef<"offices_cameras", 'Boolean'>
+    readonly footfall: FieldRef<"offices_cameras", 'Boolean'>
+    readonly sentiment: FieldRef<"offices_cameras", 'Boolean'>
   }
     
 
@@ -17780,7 +17813,7 @@ export namespace Prisma {
     zone_Id: number | null
     job_Id: string | null
     job_started_at: Date
-    job_completed_at: Date
+    job_completed_at: Date | null
     job_status: string | null
     createdAt: Date | null
     updatedAt: Date
@@ -17851,7 +17884,7 @@ export namespace Prisma {
       zone_Id: number | null
       job_Id: string | null
       job_started_at: Date
-      job_completed_at: Date
+      job_completed_at: Date | null
       job_status: string | null
       createdAt: Date | null
       updatedAt: Date
@@ -26700,7 +26733,10 @@ export namespace Prisma {
     last_active_time: 'last_active_time',
     status: 'status',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    updatedAt: 'updatedAt',
+    attendance: 'attendance',
+    footfall: 'footfall',
+    sentiment: 'sentiment'
   };
 
   export type Offices_camerasScalarFieldEnum = (typeof Offices_camerasScalarFieldEnum)[keyof typeof Offices_camerasScalarFieldEnum]
@@ -27287,16 +27323,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'offices_sentiment_analysis_sentiment_of'
+   * Reference to a field of type 'Boolean'
    */
-  export type Enumoffices_sentiment_analysis_sentiment_ofFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'offices_sentiment_analysis_sentiment_of'>
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
   /**
-   * Reference to a field of type 'Boolean'
+   * Reference to a field of type 'offices_sentiment_analysis_sentiment_of'
    */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+  export type Enumoffices_sentiment_analysis_sentiment_ofFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'offices_sentiment_analysis_sentiment_of'>
     
 
 
@@ -27667,6 +27703,9 @@ export namespace Prisma {
     status?: StringNullableFilter<"offices_cameras"> | string | null
     createdAt?: DateTimeNullableFilter<"offices_cameras"> | Date | string | null
     updatedAt?: DateTimeFilter<"offices_cameras"> | Date | string
+    attendance?: BoolFilter<"offices_cameras"> | boolean
+    footfall?: BoolFilter<"offices_cameras"> | boolean
+    sentiment?: BoolFilter<"offices_cameras"> | boolean
     live_stream_favourites?: Live_stream_favouritesListRelationFilter
     offices?: XOR<OfficesNullableScalarRelationFilter, officesWhereInput> | null
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: Offices_sentiment_analysisListRelationFilter
@@ -27687,6 +27726,9 @@ export namespace Prisma {
     status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
     live_stream_favourites?: live_stream_favouritesOrderByRelationAggregateInput
     offices?: officesOrderByWithRelationInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisOrderByRelationAggregateInput
@@ -27711,6 +27753,9 @@ export namespace Prisma {
     status?: StringNullableFilter<"offices_cameras"> | string | null
     createdAt?: DateTimeNullableFilter<"offices_cameras"> | Date | string | null
     updatedAt?: DateTimeFilter<"offices_cameras"> | Date | string
+    attendance?: BoolFilter<"offices_cameras"> | boolean
+    footfall?: BoolFilter<"offices_cameras"> | boolean
+    sentiment?: BoolFilter<"offices_cameras"> | boolean
     live_stream_favourites?: Live_stream_favouritesListRelationFilter
     offices?: XOR<OfficesNullableScalarRelationFilter, officesWhereInput> | null
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: Offices_sentiment_analysisListRelationFilter
@@ -27731,6 +27776,9 @@ export namespace Prisma {
     status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
     _count?: offices_camerasCountOrderByAggregateInput
     _avg?: offices_camerasAvgOrderByAggregateInput
     _max?: offices_camerasMaxOrderByAggregateInput
@@ -27755,6 +27803,9 @@ export namespace Prisma {
     status?: StringNullableWithAggregatesFilter<"offices_cameras"> | string | null
     createdAt?: DateTimeNullableWithAggregatesFilter<"offices_cameras"> | Date | string | null
     updatedAt?: DateTimeWithAggregatesFilter<"offices_cameras"> | Date | string
+    attendance?: BoolWithAggregatesFilter<"offices_cameras"> | boolean
+    footfall?: BoolWithAggregatesFilter<"offices_cameras"> | boolean
+    sentiment?: BoolWithAggregatesFilter<"offices_cameras"> | boolean
   }
 
   export type offices_sentiment_analysisWhereInput = {
@@ -28598,7 +28649,7 @@ export namespace Prisma {
     zone_Id?: IntNullableFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
@@ -28612,7 +28663,7 @@ export namespace Prisma {
     zone_Id?: SortOrderInput | SortOrder
     job_Id?: SortOrderInput | SortOrder
     job_started_at?: SortOrder
-    job_completed_at?: SortOrder
+    job_completed_at?: SortOrderInput | SortOrder
     job_status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
@@ -28630,7 +28681,7 @@ export namespace Prisma {
     zone_Id?: IntNullableFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
@@ -28644,7 +28695,7 @@ export namespace Prisma {
     zone_Id?: SortOrderInput | SortOrder
     job_Id?: SortOrderInput | SortOrder
     job_started_at?: SortOrder
-    job_completed_at?: SortOrder
+    job_completed_at?: SortOrderInput | SortOrder
     job_status?: SortOrderInput | SortOrder
     createdAt?: SortOrderInput | SortOrder
     updatedAt?: SortOrder
@@ -28664,7 +28715,7 @@ export namespace Prisma {
     zone_Id?: IntNullableWithAggregatesFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableWithAggregatesFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableWithAggregatesFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeWithAggregatesFilter<"parks_irrigation_job_history"> | Date | string
@@ -29862,6 +29913,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutOffices_camerasInput
     offices?: officesCreateNestedOneWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
@@ -29882,6 +29936,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
@@ -29899,6 +29956,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutOffices_camerasNestedInput
     offices?: officesUpdateOneWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
@@ -29919,6 +29979,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
@@ -29938,6 +30001,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
   }
 
   export type offices_camerasUpdateManyMutationInput = {
@@ -29952,6 +30018,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type offices_camerasUncheckedUpdateManyInput = {
@@ -29968,6 +30037,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type offices_sentiment_analysisCreateInput = {
@@ -30885,7 +30957,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyCreateInput = {
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -30899,7 +30971,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -30908,7 +30980,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -30922,7 +30994,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -30934,7 +31006,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -30943,7 +31015,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateManyMutationInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -30955,7 +31027,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32384,6 +32456,11 @@ export namespace Prisma {
     _max?: NestedEnumoffices_attendance_attendance_ofNullableFilter<$PrismaModel>
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type Live_stream_favouritesListRelationFilter = {
     every?: live_stream_favouritesWhereInput
     some?: live_stream_favouritesWhereInput
@@ -32414,6 +32491,9 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
   }
 
   export type offices_camerasAvgOrderByAggregateInput = {
@@ -32437,6 +32517,9 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
   }
 
   export type offices_camerasMinOrderByAggregateInput = {
@@ -32453,6 +32536,9 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    attendance?: SortOrder
+    footfall?: SortOrder
+    sentiment?: SortOrder
   }
 
   export type offices_camerasSumOrderByAggregateInput = {
@@ -32460,6 +32546,14 @@ export namespace Prisma {
     office_Id?: SortOrder
     latitude?: SortOrder
     longitude?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type Enumoffices_sentiment_analysis_sentiment_ofNullableFilter<$PrismaModel = never> = {
@@ -34115,6 +34209,10 @@ export namespace Prisma {
     connect?: offices_sentiment_analysisWhereUniqueInput | offices_sentiment_analysisWhereUniqueInput[]
   }
 
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
   export type live_stream_favouritesUpdateManyWithoutOffices_camerasNestedInput = {
     create?: XOR<live_stream_favouritesCreateWithoutOffices_camerasInput, live_stream_favouritesUncheckedCreateWithoutOffices_camerasInput> | live_stream_favouritesCreateWithoutOffices_camerasInput[] | live_stream_favouritesUncheckedCreateWithoutOffices_camerasInput[]
     connectOrCreate?: live_stream_favouritesCreateOrConnectWithoutOffices_camerasInput | live_stream_favouritesCreateOrConnectWithoutOffices_camerasInput[]
@@ -35662,6 +35760,19 @@ export namespace Prisma {
     _max?: NestedEnumoffices_attendance_attendance_ofNullableFilter<$PrismaModel>
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type NestedEnumoffices_sentiment_analysis_sentiment_ofNullableFilter<$PrismaModel = never> = {
     equals?: $Enums.offices_sentiment_analysis_sentiment_of | Enumoffices_sentiment_analysis_sentiment_ofFieldRefInput<$PrismaModel> | null
     in?: $Enums.offices_sentiment_analysis_sentiment_of[] | null
@@ -35862,6 +35973,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     offices?: officesCreateNestedOneWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
@@ -35881,6 +35995,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
   }
@@ -36049,6 +36166,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     offices?: officesUpdateOneWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
@@ -36068,6 +36188,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
   }
@@ -36228,6 +36351,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
@@ -36246,6 +36372,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
@@ -36399,6 +36528,9 @@ export namespace Prisma {
     status?: StringNullableFilter<"offices_cameras"> | string | null
     createdAt?: DateTimeNullableFilter<"offices_cameras"> | Date | string | null
     updatedAt?: DateTimeFilter<"offices_cameras"> | Date | string
+    attendance?: BoolFilter<"offices_cameras"> | boolean
+    footfall?: BoolFilter<"offices_cameras"> | boolean
+    sentiment?: BoolFilter<"offices_cameras"> | boolean
   }
 
   export type offices_sentiment_analysisUpsertWithWhereUniqueWithoutOfficesInput = {
@@ -36808,6 +36940,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutOffices_camerasInput
     offices?: officesCreateNestedOneWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
@@ -36827,6 +36962,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasInput
   }
@@ -36848,6 +36986,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesCreateNestedManyWithoutOffices_camerasInput
     offices?: officesCreateNestedOneWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
@@ -36867,6 +37008,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
     live_stream_favourites?: live_stream_favouritesUncheckedCreateNestedManyWithoutOffices_camerasInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedCreateNestedManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasInput
   }
@@ -36941,6 +37085,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutOffices_camerasNestedInput
     offices?: officesUpdateOneWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
@@ -36960,6 +37107,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
   }
@@ -36987,6 +37137,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutOffices_camerasNestedInput
     offices?: officesUpdateOneWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
@@ -37006,6 +37159,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
   }
@@ -37645,7 +37801,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyCreateWithoutPark_zonesInput = {
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -37657,7 +37813,7 @@ export namespace Prisma {
     park_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -37754,7 +37910,7 @@ export namespace Prisma {
     zone_Id?: IntNullableFilter<"parks_irrigation_job_history"> | number | null
     job_Id?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     job_started_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
-    job_completed_at?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
+    job_completed_at?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     job_status?: StringNullableFilter<"parks_irrigation_job_history"> | string | null
     createdAt?: DateTimeNullableFilter<"parks_irrigation_job_history"> | Date | string | null
     updatedAt?: DateTimeFilter<"parks_irrigation_job_history"> | Date | string
@@ -38009,7 +38165,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyCreateWithoutParksInput = {
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -38021,7 +38177,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -40596,6 +40752,9 @@ export namespace Prisma {
     status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
+    attendance?: boolean
+    footfall?: boolean
+    sentiment?: boolean
   }
 
   export type offices_sentiment_analysisCreateManyOfficesInput = {
@@ -40696,6 +40855,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUpdateManyWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
@@ -40714,6 +40876,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
     live_stream_favourites?: live_stream_favouritesUncheckedUpdateManyWithoutOffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_entry_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_entry_camera_IdTooffices_camerasNestedInput
     offices_sentiment_analysis_offices_sentiment_analysis_exit_camera_IdTooffices_cameras?: offices_sentiment_analysisUncheckedUpdateManyWithoutOffices_cameras_offices_sentiment_analysis_exit_camera_IdTooffices_camerasNestedInput
@@ -40732,6 +40897,9 @@ export namespace Prisma {
     status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    attendance?: BoolFieldUpdateOperationsInput | boolean
+    footfall?: BoolFieldUpdateOperationsInput | boolean
+    sentiment?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type offices_sentiment_analysisUpdateWithoutOfficesInput = {
@@ -41241,7 +41409,7 @@ export namespace Prisma {
     park_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -41250,7 +41418,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateWithoutPark_zonesInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41262,7 +41430,7 @@ export namespace Prisma {
     park_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41273,7 +41441,7 @@ export namespace Prisma {
     park_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41373,7 +41541,7 @@ export namespace Prisma {
     zone_Id?: number | null
     job_Id?: string | null
     job_started_at?: Date | string
-    job_completed_at?: Date | string
+    job_completed_at?: Date | string | null
     job_status?: string | null
     createdAt?: Date | string | null
     updatedAt?: Date | string
@@ -41709,7 +41877,7 @@ export namespace Prisma {
   export type parks_irrigation_job_historyUpdateWithoutParksInput = {
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41721,7 +41889,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41732,7 +41900,7 @@ export namespace Prisma {
     zone_Id?: NullableIntFieldUpdateOperationsInput | number | null
     job_Id?: NullableStringFieldUpdateOperationsInput | string | null
     job_started_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    job_completed_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    job_completed_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     job_status?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

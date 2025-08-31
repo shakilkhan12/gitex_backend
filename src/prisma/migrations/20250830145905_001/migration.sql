@@ -80,6 +80,9 @@ CREATE TABLE `offices_cameras` (
     `status` VARCHAR(50) NULL,
     `createdAt` TIMESTAMP(0) NULL,
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
+    `attendance` BOOLEAN NOT NULL DEFAULT false,
+    `footfall` BOOLEAN NOT NULL DEFAULT false,
+    `sentiment` BOOLEAN NOT NULL DEFAULT false,
 
     UNIQUE INDEX `offices_cameras_camera_Id_key`(`camera_Id`),
     INDEX `office_Id`(`office_Id`),
@@ -256,7 +259,7 @@ CREATE TABLE `parks_irrigation_job_history` (
     `zone_Id` INTEGER NULL,
     `job_Id` VARCHAR(255) NULL,
     `job_started_at` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
-    `job_completed_at` TIMESTAMP(0) NOT NULL DEFAULT ('0000-00-00 00:00:00'),
+    `job_completed_at` TIMESTAMP(0) NULL,
     `job_status` VARCHAR(50) NULL,
     `createdAt` TIMESTAMP(0) NULL,
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
