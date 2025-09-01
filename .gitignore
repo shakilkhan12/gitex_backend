@@ -1,6 +1,5 @@
 # Dependency directories
 /node_modules
-/.env
 /info.txt
 dist
 .vercel

@@ -8,6 +8,7 @@ import officeSentimentAnalysisRouter from "./office-sentiment-analysis.routes";
 import parkSentimentAnalysisRouter from "./park-sentiment-analysis.routes";
 import officeAttendanceRouter from "./office-attendance.routes";
 import parkAttendanceRouter from "./park-attendance.routes";
+import userRouter from "./user.routes";
 
 const mainRouter = Router();
 
@@ -20,5 +21,6 @@ mainRouter.use('/office-sentiment-analysis', officeSentimentAnalysisRouter)
 mainRouter.use('/park-sentiment-analysis', parkSentimentAnalysisRouter)
 mainRouter.use('/office-attendance', officeAttendanceRouter)
 mainRouter.use('/park-attendance', parkAttendanceRouter)
+mainRouter.use('/users', userRouter)
 
 export default mainRouter;

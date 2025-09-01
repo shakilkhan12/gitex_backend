@@ -7,3 +7,4 @@ export { default as OfficeSentimentAnalysisController } from "@/controllers/offi
 export { default as ParkSentimentAnalysisController } from "@/controllers/park-sentiment-analysis.controller";
 export { default as OfficeAttendanceController } from "@/controllers/office-attendance.controller";
 export { default as ParkAttendanceController } from "@/controllers/park-attendance.controller";
+export { default as UserController } from "@/controllers/user.controller";

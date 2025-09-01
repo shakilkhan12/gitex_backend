@@ -7,3 +7,4 @@ export { default as OfficeSentimentAnalysisService } from "@/services/office-sen
 export { default as ParkSentimentAnalysisService } from "@/services/park-sentiment-analysis.service";
 export { default as OfficeAttendanceService } from "@/services/office-attendance.service";
 export { default as ParkAttendanceService } from "@/services/park-attendance.service";
+export { default as UserService } from "@/services/user.service";

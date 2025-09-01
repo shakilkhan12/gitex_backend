@@ -1,4 +1,5 @@
 
+import dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors"
 import morgan from "morgan";
@@ -11,10 +12,13 @@ import mainRouter from "@/routes";
 import { errorHandler } from "@/middlewares";
 import AccessSecretService from "@/services/access_secret.service";
 
+// Load environment variables
+dotenv.config({ path: '.env.test' });
+
 const app = express();
 const PORT = 5000;
 
-app.use(cors({ credentials: true, origin: process.env.CLIENT }));
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,12 +44,12 @@ const startServer = async () => {
   });
 
   // Run once immediately
-  AccessSecretService.updateAccessSecret()
-    .then(() => console.log("🔑 Initial Access Secret updated"))
-    .catch((err) => console.error("❌ Failed to update Access Secret:", err));
+  // AccessSecretService.updateAccessSecret()
+  //   .then(() => console.log("🔑 Initial Access Secret updated"))
+  //   .catch((err) => console.error("❌ Failed to update Access Secret:", err));
 
   // Start daily cron job
-  AccessSecretService.startCronJob();
+  // AccessSecretService.startCronJob();
 };
 
 
