@@ -237,4 +237,83 @@ smokingDetectionRouter.post('/add', smokingDetectionValidations, SmokingDetectio
  */
 smokingDetectionRouter.get('/get', SmokingDetectionController.viewSmokingDetections)
 
+/**
+ * @swagger
+ * /smoking-detection/get/{id}:
+ *   get:
+ *     summary: Get smoking detection by ID
+ *     tags: [Smoking Detection]
+ *     description: Retrieve a specific smoking detection record by its ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: Smoking detection ID
+ *         example: 1
+ *     responses:
+ *       200:
+ *         description: Smoking detection retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/SmokingDetection'
+ *       404:
+ *         description: Smoking detection not found
+ *       500:
+ *         description: Internal server error
+ */
+smokingDetectionRouter.get('/get/:id', SmokingDetectionController.getSmokingDetectionById)
+
+/**
+ * @swagger
+ * /smoking-detection/update/{id}:
+ *   put:
+ *     summary: Update smoking detection
+ *     tags: [Smoking Detection]
+ *     description: Update an existing smoking detection record
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: Smoking detection ID
+ *         example: 1
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               location:
+ *                 type: string
+ *                 description: Updated location
+ *               snap_shot:
+ *                 type: string
+ *                 description: Updated snapshot
+ *               description:
+ *                 type: string
+ *                 description: Updated description
+ *               current_status:
+ *                 type: string
+ *                 description: Updated status
+ *     responses:
+ *       200:
+ *         description: Smoking detection updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/SmokingDetection'
+ *       400:
+ *         description: Bad request - validation errors
+ *       404:
+ *         description: Smoking detection not found
+ *       500:
+ *         description: Internal server error
+ */
+smokingDetectionRouter.put('/update/:id', SmokingDetectionController.updateSmokingDetection)
+
 export default smokingDetectionRouter; 

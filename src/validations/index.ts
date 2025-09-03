@@ -7,3 +7,5 @@ export { officeSentimentAnalysisValidations } from "./office-sentiment-analysis.
 export { parkSentimentAnalysisValidations } from "./park-sentiment-analysis.validations";
 export { officeAttendanceValidations } from "./office-attendance.validations";
 export { parkAttendanceValidations } from "./park-attendance.validations";
+export { userValidations, userLoginValidations } from "./user.validations";
+export { accessSecretValidations } from "./access-secret.validations";

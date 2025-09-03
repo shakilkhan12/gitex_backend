@@ -33,8 +33,9 @@ export const parkSentimentAnalysisValidations = [
         .withMessage('Check in sentiment is required')
         .isLength({ max: 50 })
         .withMessage('Check in sentiment must not exceed 50 characters')
-        .isIn(['positive', 'negative', 'neutral', 'happy', 'sad', 'angry', 'surprised', 'fearful', 'disgusted'])
-        .withMessage('Check in sentiment must be one of: positive, negative, neutral, happy, sad, angry, surprised, fearful, disgusted'),
+        // .isIn(['positive', 'negative', 'neutral', 'happy', 'sad', 'angry', 'surprised', 'fearful', 'disgusted'])
+        // .withMessage('Check in sentiment must be one of: positive, negative, neutral, happy, sad, angry, surprised, fearful, disgusted')
+        ,
     
     body('entry_camera_Id')
         .isInt({ min: 1 })

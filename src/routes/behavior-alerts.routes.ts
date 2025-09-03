@@ -58,17 +58,16 @@ const behaviorAlertsRouter = Router();
  *                   example: 1
  *                 park_Id:
  *                   type: integer
- *                   example: 1
+ *                   example: 2
  *                 person_Id:
  *                   type: string
  *                   example: "PERSON_001"
  *                 camera_Id:
  *                   type: integer
- *                   example: 5
+ *                   example: 71
  *                 detected_behaviour:
  *                   type: string
- *                   enum: [fighting, vandalism, trespassing, suspicious_activity, crowding, other]
- *                   example: "fighting"
+ *                   example: "Fall Down"
  *                 snap_shot:
  *                   type: string
  *                   example: "behavior_alert_20240115_143000.jpg"

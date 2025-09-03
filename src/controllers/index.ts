@@ -8,3 +8,4 @@ export { default as ParkSentimentAnalysisController } from "@/controllers/park-s
 export { default as OfficeAttendanceController } from "@/controllers/office-attendance.controller";
 export { default as ParkAttendanceController } from "@/controllers/park-attendance.controller";
 export { default as UserController } from "@/controllers/user.controller";
+export { default as AccessSecretController } from "@/controllers/access-secret.controller";

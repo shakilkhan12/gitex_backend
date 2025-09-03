@@ -32,8 +32,9 @@ export const landscapingValidations = [
         .withMessage('Type is required')
         .isLength({ max: 100 })
         .withMessage('Type must not exceed 100 characters')
-        .isIn(['maintenance', 'planting', 'pruning', 'irrigation', 'cleaning', 'other'])
-        .withMessage('Type must be one of: maintenance, planting, pruning, irrigation, cleaning, other'),
+        // .isIn(['maintenance', 'planting', 'pruning', 'irrigation', 'cleaning', 'other'])
+        // .withMessage('Type must be one of: maintenance, planting, pruning, irrigation, cleaning, other')
+        ,
     
     body('status')
         .trim()

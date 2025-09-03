@@ -40,6 +40,6 @@ export const litterDetectionValidations = [
         .withMessage('Status is required')
         .isLength({ max: 50 })
         .withMessage('Status must not exceed 50 characters')
-        .isIn(['pending', 'in_progress', 'resolved', 'closed'])
-        .withMessage('Status must be one of: pending, in_progress, resolved, closed'),
+        // .isIn(['pending', 'in_progress', 'resolved', 'closed'])
+        // .withMessage('Status must be one of: pending, in_progress, resolved, closed'),
 ]; 

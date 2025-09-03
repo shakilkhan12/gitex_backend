@@ -1,7 +1,65 @@
 import { UserController } from "@/controllers";
+import { userLoginValidations } from "@/validations";
 import { Router } from "express";
 
 const userRouter = Router();
+
+/**
+ * @swagger
+ * /users/login:
+ *   post:
+ *     summary: User login
+ *     tags: [Users]
+ *     description: Authenticate user with employee code and password
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - EmpCode
+ *               - Password
+ *             properties:
+ *               EmpCode:
+ *                 type: string
+ *                 description: Employee code
+ *                 example: "EMP001"
+ *               Password:
+ *                 type: string
+ *                 description: User password
+ *                 example: "password123"
+ *     responses:
+ *       200:
+ *         description: Login successful
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: "Login successful"
+ *                 data:
+ *                   type: object
+ *                   description: User data from third-party API
+ *       400:
+ *         description: Bad request - missing credentials
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "EmpCode and Password are required"
+ *       500:
+ *         description: Internal server error
+ */
+userRouter.post('/login', userLoginValidations, UserController.login)
 
 /**
  * @swagger
@@ -326,167 +384,5 @@ const userRouter = Router();
  *                   type: integer
  *                   example: 500
  */
-userRouter.get('/get/:personId', UserController.getUserDetailsWithAttendance);
-
-/**
- * @swagger
- * /users/all:
- *   get:
- *     summary: Get all users
- *     tags: [Users]
- *     description: Retrieve a list of all users with their basic information and roles
- *     responses:
- *       200:
- *         description: List of users retrieved successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   Id:
- *                     type: integer
- *                     example: 1
- *                   emp_Id:
- *                     type: string
- *                     example: "EMP001"
- *                   emp__eng_name:
- *                     type: string
- *                     example: "John Smith"
- *                   emp__arabic_name:
- *                     type: string
- *                     example: "جون سميث"
- *                   gender:
- *                     type: string
- *                     example: "Male"
- *                   email:
- *                     type: string
- *                     example: "john.smith@example.com"
- *                   dep_eng_name:
- *                     type: string
- *                     example: "IT Department"
- *                   desig_eng_name:
- *                     type: string
- *                     example: "Software Engineer"
- *                   ai_engine_access:
- *                     type: boolean
- *                     example: true
- *                   users_roles:
- *                     type: object
- *                     properties:
- *                       role_name:
- *                         type: string
- *                         example: "Admin"
- *       500:
- *         description: Internal server error
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: "Internal server error"
- *                 status:
- *                   type: integer
- *                   example: 500
- */
-userRouter.get('/all', UserController.getAllUsers);
-
-/**
- * @swagger
- * /users/{userId}:
- *   get:
- *     summary: Get user by ID
- *     tags: [Users]
- *     description: Retrieve a specific user by their database ID
- *     parameters:
- *       - in: path
- *         name: userId
- *         required: true
- *         schema:
- *           type: integer
- *         description: Database ID of the user
- *         example: 1
- *     responses:
- *       200:
- *         description: User retrieved successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 Id:
- *                   type: integer
- *                   example: 1
- *                 emp_Id:
- *                   type: string
- *                   example: "EMP001"
- *                 emp__eng_name:
- *                   type: string
- *                   example: "John Smith"
- *                 emp__arabic_name:
- *                   type: string
- *                   example: "جون سميث"
- *                 gender:
- *                   type: string
- *                   example: "Male"
- *                 email:
- *                   type: string
- *                   example: "john.smith@example.com"
- *                 dep_eng_name:
- *                   type: string
- *                   example: "IT Department"
- *                 desig_eng_name:
- *                   type: string
- *                   example: "Software Engineer"
- *                 ai_engine_access:
- *                   type: boolean
- *                   example: true
- *                 users_roles:
- *                   type: object
- *                   properties:
- *                     role_name:
- *                       type: string
- *                       example: "Admin"
- *       400:
- *         description: Bad request - Valid userId parameter is required
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 error:
- *                   type: string
- *                   example: "Valid userId parameter is required"
- *       404:
- *         description: User not found
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: "User does not exist"
- *                 status:
- *                   type: integer
- *                   example: 400
- *       500:
- *         description: Internal server error
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: "Internal server error"
- *                 status:
- *                   type: integer
- *                   example: 500
- */
-userRouter.get('/:userId', UserController.getUserById);
 
 export default userRouter;

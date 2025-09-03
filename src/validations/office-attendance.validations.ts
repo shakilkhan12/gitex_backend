@@ -50,6 +50,7 @@ export const officeAttendanceValidations = [
         .withMessage('Mood is required')
         .isLength({ max: 50 })
         .withMessage('Mood must not exceed 50 characters')
-        .isIn(['happy', 'sad', 'angry', 'neutral', 'excited', 'tired', 'stressed', 'relaxed', 'focused', 'distracted'])
-        .withMessage('Mood must be one of: happy, sad, angry, neutral, excited, tired, stressed, relaxed, focused, distracted'),
+        // .isIn(['happy', 'sad', 'angry', 'neutral', 'excited', 'tired', 'stressed', 'relaxed', 'focused', 'distracted'])
+        // .withMessage('Mood must be one of: happy, sad, angry, neutral, excited, tired, stressed, relaxed, focused, distracted')
+        ,
 ]; 

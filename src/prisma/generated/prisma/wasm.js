@@ -161,13 +161,8 @@ exports.Prisma.Offices_attendanceScalarFieldEnum = {
   Id: 'Id',
   office_Id: 'office_Id',
   person_Id: 'person_Id',
-  attendance_of: 'attendance_of',
-  check_in_date: 'check_in_date',
-  check_in_time: 'check_in_time',
-  check_out_date: 'check_out_date',
-  check_out_time: 'check_out_time',
-  snap_shot: 'snap_shot',
-  mood: 'mood',
+  entry_time: 'entry_time',
+  exit_time: 'exit_time',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -192,6 +187,11 @@ exports.Prisma.Offices_sentiment_analysisScalarFieldEnum = {
   Id: 'Id',
   office_Id: 'office_Id',
   person_Id: 'person_Id',
+  detection_Id: 'detection_Id',
+  person_name: 'person_name',
+  person_image: 'person_image',
+  gender: 'gender',
+  check_in_image: 'check_in_image',
   sentiment_of: 'sentiment_of',
   check_in_date: 'check_in_date',
   check_in_time: 'check_in_time',
@@ -200,6 +200,7 @@ exports.Prisma.Offices_sentiment_analysisScalarFieldEnum = {
   check_out_date: 'check_out_date',
   check_out_time: 'check_out_time',
   check_out_capture: 'check_out_capture',
+  check_out_sentiment: 'check_out_sentiment',
   exit_camera_Id: 'exit_camera_Id',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -263,13 +264,8 @@ exports.Prisma.Parks_attendanceScalarFieldEnum = {
   Id: 'Id',
   park_Id: 'park_Id',
   person_Id: 'person_Id',
-  attendance_of: 'attendance_of',
-  check_in_date: 'check_in_date',
-  check_in_time: 'check_in_time',
-  check_out_date: 'check_out_date',
-  check_out_time: 'check_out_time',
-  snap_shot: 'snap_shot',
-  mood: 'mood',
+  entry_time: 'entry_time',
+  exit_time: 'exit_time',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -279,7 +275,13 @@ exports.Prisma.Parks_behaviour_alertsScalarFieldEnum = {
   park_Id: 'park_Id',
   person_Id: 'person_Id',
   camera_Id: 'camera_Id',
+  detection_Id: 'detection_Id',
+  detection_code: 'detection_code',
+  detection_date: 'detection_date',
+  detection_time: 'detection_time',
+  description: 'description',
   detected_behaviour: 'detected_behaviour',
+  is_employee: 'is_employee',
   snap_shot: 'snap_shot',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -295,6 +297,12 @@ exports.Prisma.Parks_intrusion_detectionScalarFieldEnum = {
   snap_shot: 'snap_shot',
   posted_to_intranet_date: 'posted_to_intranet_date',
   posted_to_intranet_time: 'posted_to_intranet_time',
+  detection_Id: 'detection_Id',
+  detection_date: 'detection_date',
+  detection_time: 'detection_time',
+  description: 'description',
+  is_employee: 'is_employee',
+  current_status: 'current_status',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -319,6 +327,13 @@ exports.Prisma.Parks_landscapingScalarFieldEnum = {
   snap_shot: 'snap_shot',
   type: 'type',
   status: 'status',
+  detection_Id: 'detection_Id',
+  detection_date: 'detection_date',
+  detection_time: 'detection_time',
+  description: 'description',
+  current_status: 'current_status',
+  camera_Id: 'camera_Id',
+  after_image: 'after_image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -332,6 +347,30 @@ exports.Prisma.Parks_litter_detectionScalarFieldEnum = {
   occurrence_time: 'occurrence_time',
   snap_shot: 'snap_shot',
   status: 'status',
+  detection_Id: 'detection_Id',
+  detection_date: 'detection_date',
+  detection_time: 'detection_time',
+  description: 'description',
+  current_status: 'current_status',
+  camera_Id: 'camera_Id',
+  after_image: 'after_image',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Ticket_details_tableScalarFieldEnum = {
+  id: 'id',
+  status: 'status',
+  date: 'date',
+  time: 'time',
+  comments: 'comments',
+  image: 'image',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3',
+  abc4: 'abc4',
+  litterDetectionId: 'litterDetectionId',
+  landscapingId: 'landscapingId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -340,6 +379,11 @@ exports.Prisma.Parks_sentiment_analysisScalarFieldEnum = {
   Id: 'Id',
   park_Id: 'park_Id',
   person_Id: 'person_Id',
+  detection_Id: 'detection_Id',
+  person_name: 'person_name',
+  person_image: 'person_image',
+  gender: 'gender',
+  check_in_image: 'check_in_image',
   sentiment_of: 'sentiment_of',
   check_in_date: 'check_in_date',
   check_in_time: 'check_in_time',
@@ -348,6 +392,7 @@ exports.Prisma.Parks_sentiment_analysisScalarFieldEnum = {
   check_out_date: 'check_out_date',
   check_out_time: 'check_out_time',
   check_out_capture: 'check_out_capture',
+  check_out_sentiment: 'check_out_sentiment',
   exit_camera_Id: 'exit_camera_Id',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -363,8 +408,28 @@ exports.Prisma.Parks_smoking_detectionScalarFieldEnum = {
   snap_shot: 'snap_shot',
   posted_to_intranet_date: 'posted_to_intranet_date',
   posted_to_intranet_time: 'posted_to_intranet_time',
+  detection_Id: 'detection_Id',
+  detection_date: 'detection_date',
+  detection_time: 'detection_time',
+  description: 'description',
+  is_employee: 'is_employee',
+  current_status: 'current_status',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Intranet_posting_historyScalarFieldEnum = {
+  id: 'id',
+  smokingDetectionId: 'smokingDetectionId',
+  intrusionDetectionId: 'intrusionDetectionId',
+  title: 'title',
+  intranet_id: 'intranet_id',
+  comments: 'comments',
+  date: 'date',
+  time: 'time',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3'
 };
 
 exports.Prisma.UsersScalarFieldEnum = {
@@ -452,6 +517,36 @@ exports.Prisma.Users_rolesScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.Parks_footfall_analysisScalarFieldEnum = {
+  id: 'id',
+  park_Id: 'park_Id',
+  detection_Id: 'detection_Id',
+  person_Id: 'person_Id',
+  gender: 'gender',
+  is_child: 'is_child',
+  time: 'time',
+  detected_camera_Id: 'detected_camera_Id',
+  detected_camera_name: 'detected_camera_name',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3'
+};
+
+exports.Prisma.Offices_footfall_analysisScalarFieldEnum = {
+  id: 'id',
+  office_Id: 'office_Id',
+  detection_Id: 'detection_Id',
+  person_Id: 'person_Id',
+  gender: 'gender',
+  is_child: 'is_child',
+  time: 'time',
+  detected_camera_Id: 'detected_camera_Id',
+  detected_camera_name: 'detected_camera_name',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -480,12 +575,6 @@ exports.Prisma.officesOrderByRelevanceFieldEnum = {
   image: 'image'
 };
 
-exports.Prisma.offices_attendanceOrderByRelevanceFieldEnum = {
-  person_Id: 'person_Id',
-  snap_shot: 'snap_shot',
-  mood: 'mood'
-};
-
 exports.Prisma.offices_camerasOrderByRelevanceFieldEnum = {
   camera_Id: 'camera_Id',
   camera_english_name: 'camera_english_name',
@@ -496,8 +585,14 @@ exports.Prisma.offices_camerasOrderByRelevanceFieldEnum = {
 
 exports.Prisma.offices_sentiment_analysisOrderByRelevanceFieldEnum = {
   person_Id: 'person_Id',
+  detection_Id: 'detection_Id',
+  person_name: 'person_name',
+  person_image: 'person_image',
+  gender: 'gender',
+  check_in_image: 'check_in_image',
   check_in_sentiment: 'check_in_sentiment',
-  check_out_capture: 'check_out_capture'
+  check_out_capture: 'check_out_capture',
+  check_out_sentiment: 'check_out_sentiment'
 };
 
 exports.Prisma.park_camerasOrderByRelevanceFieldEnum = {
@@ -531,21 +626,21 @@ exports.Prisma.parksOrderByRelevanceFieldEnum = {
   image: 'image'
 };
 
-exports.Prisma.parks_attendanceOrderByRelevanceFieldEnum = {
-  person_Id: 'person_Id',
-  snap_shot: 'snap_shot',
-  mood: 'mood'
-};
-
 exports.Prisma.parks_behaviour_alertsOrderByRelevanceFieldEnum = {
   person_Id: 'person_Id',
+  detection_Id: 'detection_Id',
+  detection_code: 'detection_code',
+  description: 'description',
   detected_behaviour: 'detected_behaviour',
   snap_shot: 'snap_shot'
 };
 
 exports.Prisma.parks_intrusion_detectionOrderByRelevanceFieldEnum = {
   location: 'location',
-  snap_shot: 'snap_shot'
+  snap_shot: 'snap_shot',
+  detection_Id: 'detection_Id',
+  description: 'description',
+  current_status: 'current_status'
 };
 
 exports.Prisma.parks_irrigation_job_historyOrderByRelevanceFieldEnum = {
@@ -558,25 +653,61 @@ exports.Prisma.parks_landscapingOrderByRelevanceFieldEnum = {
   location: 'location',
   snap_shot: 'snap_shot',
   type: 'type',
-  status: 'status'
+  status: 'status',
+  detection_Id: 'detection_Id',
+  description: 'description',
+  current_status: 'current_status',
+  after_image: 'after_image'
 };
 
 exports.Prisma.parks_litter_detectionOrderByRelevanceFieldEnum = {
   case_Id: 'case_Id',
   location: 'location',
   snap_shot: 'snap_shot',
-  status: 'status'
+  status: 'status',
+  detection_Id: 'detection_Id',
+  description: 'description',
+  current_status: 'current_status',
+  after_image: 'after_image'
+};
+
+exports.Prisma.ticket_details_tableOrderByRelevanceFieldEnum = {
+  status: 'status',
+  comments: 'comments',
+  image: 'image',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3',
+  abc4: 'abc4'
 };
 
 exports.Prisma.parks_sentiment_analysisOrderByRelevanceFieldEnum = {
   person_Id: 'person_Id',
+  detection_Id: 'detection_Id',
+  person_name: 'person_name',
+  person_image: 'person_image',
+  gender: 'gender',
+  check_in_image: 'check_in_image',
   check_in_sentiment: 'check_in_sentiment',
-  check_out_capture: 'check_out_capture'
+  check_out_capture: 'check_out_capture',
+  check_out_sentiment: 'check_out_sentiment'
 };
 
 exports.Prisma.parks_smoking_detectionOrderByRelevanceFieldEnum = {
   location: 'location',
-  snap_shot: 'snap_shot'
+  snap_shot: 'snap_shot',
+  detection_Id: 'detection_Id',
+  description: 'description',
+  current_status: 'current_status'
+};
+
+exports.Prisma.intranet_posting_historyOrderByRelevanceFieldEnum = {
+  title: 'title',
+  intranet_id: 'intranet_id',
+  comments: 'comments',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3'
 };
 
 exports.Prisma.usersOrderByRelevanceFieldEnum = {
@@ -600,17 +731,27 @@ exports.Prisma.usersOrderByRelevanceFieldEnum = {
 exports.Prisma.users_rolesOrderByRelevanceFieldEnum = {
   role_name: 'role_name'
 };
-exports.offices_attendance_attendance_of = exports.$Enums.offices_attendance_attendance_of = {
-  employee: 'employee',
-  visitor: 'visitor'
+
+exports.Prisma.parks_footfall_analysisOrderByRelevanceFieldEnum = {
+  detection_Id: 'detection_Id',
+  gender: 'gender',
+  detected_camera_Id: 'detected_camera_Id',
+  detected_camera_name: 'detected_camera_name',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3'
 };
 
+exports.Prisma.offices_footfall_analysisOrderByRelevanceFieldEnum = {
+  detection_Id: 'detection_Id',
+  gender: 'gender',
+  detected_camera_Id: 'detected_camera_Id',
+  detected_camera_name: 'detected_camera_name',
+  abc1: 'abc1',
+  abc2: 'abc2',
+  abc3: 'abc3'
+};
 exports.offices_sentiment_analysis_sentiment_of = exports.$Enums.offices_sentiment_analysis_sentiment_of = {
-  employee: 'employee',
-  visitor: 'visitor'
-};
-
-exports.parks_attendance_attendance_of = exports.$Enums.parks_attendance_attendance_of = {
   employee: 'employee',
   visitor: 'visitor'
 };
@@ -638,11 +779,15 @@ exports.Prisma.ModelName = {
   parks_irrigation_job_history: 'parks_irrigation_job_history',
   parks_landscaping: 'parks_landscaping',
   parks_litter_detection: 'parks_litter_detection',
+  ticket_details_table: 'ticket_details_table',
   parks_sentiment_analysis: 'parks_sentiment_analysis',
   parks_smoking_detection: 'parks_smoking_detection',
+  intranet_posting_history: 'intranet_posting_history',
   users: 'users',
   users_permissions: 'users_permissions',
-  users_roles: 'users_roles'
+  users_roles: 'users_roles',
+  parks_footfall_analysis: 'parks_footfall_analysis',
+  offices_footfall_analysis: 'offices_footfall_analysis'
 };
 
 /**

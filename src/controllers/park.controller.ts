@@ -25,5 +25,35 @@ class ParkController extends ParkService {
       next(error)
     }
    }
+
+   public static getParkById = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { id } = req.params;
+      const park = await ParkService.getParkByIdService(parseInt(id));
+      return res.status(STATUS.SUCCESS).json(park);
+    } catch (error) {
+      next(error);
+    }
+   }
+
+   public static getParkByParkId = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { parkId } = req.params;
+      const park = await ParkService.getParkByParkIdService(parkId);
+      return res.status(STATUS.SUCCESS).json(park);
+    } catch (error) {
+      next(error);
+    }
+   }
+
+   public static getParkStatistics = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { id } = req.params;
+      const statistics = await ParkService.getParkStatisticsService(parseInt(id));
+      return res.status(STATUS.SUCCESS).json(statistics);
+    } catch (error) {
+      next(error);
+    }
+   }
 }
 export default ParkController;

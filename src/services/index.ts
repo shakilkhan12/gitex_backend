@@ -8,3 +8,4 @@ export { default as ParkSentimentAnalysisService } from "@/services/park-sentime
 export { default as OfficeAttendanceService } from "@/services/office-attendance.service";
 export { default as ParkAttendanceService } from "@/services/park-attendance.service";
 export { default as UserService } from "@/services/user.service";
+export { default as AccessSecretService } from "@/services/access_secret.service";
