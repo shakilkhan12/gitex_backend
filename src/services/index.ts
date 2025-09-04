@@ -9,3 +9,4 @@ export { default as OfficeAttendanceService } from "@/services/office-attendance
 export { default as ParkAttendanceService } from "@/services/park-attendance.service";
 export { default as UserService } from "@/services/user.service";
 export { default as AccessSecretService } from "@/services/access_secret.service";
+export { default as UsersRolesService } from "@/services/user_roles_service";
