@@ -8,7 +8,7 @@ class UserService {
 
    protected static loginService = async (EmpCode: string, Password: string) => {
       console.log("🟢 [UserService] Attempting login for EmpCode:", EmpCode);
-
+   
       try {
          // 1️⃣ Get SecretKey from Prisma
          const secretRecord = await db.access_secret.findFirst();
@@ -18,33 +18,99 @@ class UserService {
          }
          const secretKey = secretRecord.value;
          console.log("✅ [UserService] SecretKey retrieved successfully");
-
+   
          // 2️⃣ Prepare payload for third-party API
          const payload = {
             EmpCode,
             Password,
-            SecretKey: secretKey,
+            SecretKey: `${secretKey}==`,
             Lang: "en"
          };
-         console.log("📤 [UserService] Sending payload to third-party API:", payload);
-
+   
          // 3️⃣ Call third-party API
          const response = await axios.post(
             "http://192.168.164.7/website_demo/middleware/?class=general&action=EmployeeLoginService",
             payload,
             {
                headers: { "Content-Type": "application/json" },
-               timeout: 10000
             }
          );
-
+   
          console.log("📥 [UserService] Third-party API response:", response.data);
-
-         // 4️⃣ Return the response data
+   
+         // 4️⃣ Check if login was successful
+         if (response.data.status !== 'SUCCESS' || response.data.code !== 200) {
+            throw new HttpException(STATUS.BAD_REQUEST, response.data.error?.msg || "Login failed");
+         }
+   
+         const userId = response.data.data.UserID;
+         console.log("✅ [UserService] Login successful, UserID:", userId);
+   
+         // 5️⃣ Find user in database and update last_login
+         try {
+            // First, try to find by emp_Id (assuming emp_Id matches the UserID from API)
+            const user = await db.users.findFirst({
+               where: {
+                  emp_Id: userId
+               }
+            });
+   
+            if (user) {
+               console.log("✅ [UserService] User found in database, updating last_login");
+               
+               // Update the user's last_login field
+               const updatedUser = await db.users.update({
+                  where: {
+                     Id: user.Id
+                  },
+                  data: {
+                     last_login: new Date()
+                  }
+               });
+   
+               console.log("✅ [UserService] User last_login updated successfully");
+            } else {
+               console.log("⚠️ [UserService] User not found in database with emp_Id:", userId);
+               
+               // Alternative: try to find by other fields if emp_Id doesn't match
+               // For example, if UserID from API is actually the employee code
+               const userByEmpCode = await db.users.findFirst({
+                  where: {
+                     emp_Id: EmpCode // Try with the original EmpCode parameter
+                  }
+               });
+   
+               if (userByEmpCode) {
+                  console.log("✅ [UserService] User found by EmpCode, updating last_login");
+                  
+                  await db.users.update({
+                     where: {
+                        Id: userByEmpCode.Id
+                     },
+                     data: {
+                        last_login: new Date()
+                     }
+                  });
+               } else {
+                  console.log("⚠️ [UserService] User not found in database with any identifier");
+               }
+            }
+         } catch (dbError) {
+            console.error("❌ [UserService] Error updating user last_login:", dbError);
+            // Don't throw error here - we still want to return the successful login response
+            // even if the last_login update fails
+         }
+   
+         // 6️⃣ Return the response data
          return response.data;
-
+   
       } catch (error: any) {
          console.error("💥 [UserService] Error during login:", error.message || error);
+         
+         if (error instanceof HttpException) {
+            throw error;
+         }
+         
          throw new HttpException(STATUS.BAD_REQUEST, "Login failed");
       }
    }
